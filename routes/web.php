@@ -19,3 +19,7 @@ Route::get('/welcome', function () {
 });
 
 Route::get('/', [HackatonController::class, 'halamanUtama'])->name('halamanUtama');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
