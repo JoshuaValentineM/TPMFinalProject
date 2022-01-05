@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
             'name' => 'admin',
             'email' => 'admin@admin.net',
             'password' => bcrypt('admin'),
-            // 'rememberToken' => Str::random(60),
+            'remember_token' => Str::random(60),
         ]);
     }
 }
