@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.loginPage {
+    display: flex;
+    position: relative;
+}
+
+.headLoginPage {
+    display: flex;
+    justify-content: end;
+}
+
+.headLoginPage div {
+    padding: 3px;
+    font-weight: 500;
+}
+
+.leftLoginPage {
+    background-color: rgb(218, 218, 218);
+    position: fixed;
+    height: 100%;
+    width: 550px;
+    padding: 50px;
+}
+
+.rightLoginPage {
+    width: 100%;
+    margin-left: 550px;
+    padding: 50px;
+}
+
+.loginForm h3 {
+    padding-top: 80px;
+}
+
+form>div {
+    padding-top: 7px;
+}
+
+label {
+    font-weight: 500;
+}
+
+.passwordLabel {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+button {
+    width: 200px;
+}

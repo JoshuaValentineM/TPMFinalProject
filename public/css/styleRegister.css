@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.registerPage {
+    display: flex;
+    position: relative;
+}
+
+.headRegisterPage {
+    display: flex;
+    justify-content: end;
+}
+
+.headRegisterPage div {
+    padding: 3px;
+    font-weight: 500;
+}
+
+.leftRegisterPage {
+    background-color: rgb(218, 218, 218);
+    position: fixed;
+    height: 100%;
+    width: 550px;
+    padding: 50px;
+}
+
+.rightRegisterPage {
+    width: 100%;
+    margin-left: 550px;
+    padding: 50px;
+}
+
+.registerForm h3 {
+    padding-top: 80px;
+    padding-bottom: 25px;
+}
+
+form>div {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.teamInformation {
+    border-top: 1px solid black;
+}
+
+.leaderInformation {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+h5 {
+    display: flex;
+    justify-content: center;
+
+}
+
+label {
+    font-weight: 500;
+}
+
+
+button {
+    width: 200px;
+    margin-top: 30px;
+}
+
+.checkboxStatus {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.birthdate {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.idCard {
+    display: flex;
+    justify-content: space-between;
+}

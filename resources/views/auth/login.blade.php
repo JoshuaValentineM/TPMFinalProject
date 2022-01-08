@@ -1,7 +1,7 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
-@section('content')
-<div class="container">
+@section('content') --}}
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -69,5 +69,94 @@
             </div>
         </div>
     </div>
-</div>
-@endsection
+</div> --}}
+
+<head>
+    <link rel="stylesheet" type="css" href="styleLogin.css">
+ </head>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechnoScape</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styleLoginPage.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{{ asset('css/styleLogin.css') }}" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Login Page -->
+
+    <section class="loginPage">
+      <div class="leftLoginPage">
+        <div>
+            <img src="{{ ('img/LogoTSfull.svg') }}" >
+        </div>
+        <h2>[tagline]</h2>
+
+      </div>
+
+      <div class="rightLoginPage">
+        <div class="headLoginPage">
+            <div style="color: rgb(161, 161, 161) ;">Not registered?</div>
+            <a class="btn btn-link" href="{{ route('register') }}">
+                {{ __('Register') }}
+            </a>
+        </div>
+
+        <div class="loginForm">
+            <h3>Login to TechnoScape</h3>
+
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+                <div class="mb-3">
+                  <label for="email" class="form-label">Team Name</label>
+                  <div class="mb-3">
+                  <input id="email" type="email" class="form-control
+                  @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <div class="passwordLabel">
+                    <label for="password" class="form-label">Password</label>
+                    <label for="password" class="form-label" style="color: rgb(161, 161, 161) ;">Forgot password?</label>
+                  </div>
+                  <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                </div>
+                </div>
+                <div>
+                  <button type="submit" class="btn btn-secondary rounded-pill">Login</button>
+                </div>
+              </form>
+        </div>
+      </div>
+
+    </section>
+
+
+
+
+
+
+</body>
+</html>
+
+{{-- @endsection --}}
