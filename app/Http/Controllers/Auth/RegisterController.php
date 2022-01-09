@@ -51,9 +51,22 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'teamName' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required|string|min:8|confirmed|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/'],
+            'username' => ['required', 'string', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/', 'confirmed'],
+            'binusian' => ['required', 'string'],
+            'fullName' => ['required', 'string', 'max:255'],
+            // 'emailLeader' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'whatsappNumber' => ['required', 'string', 'min:11', 'unique:users'],
+            'lineID' => ['required', 'string', 'unique:users'],
+            'githubGitlabID' => ['required', 'string'],
+            'birthPlace' => ['required', 'string'],
+            'dayBirthDate' => ['required', 'string'],
+            'monthBirthDate' => ['required', 'string'],
+            'yearBirthDate' => ['required', 'string'],
+            // 'CV' => ['required', 'mimes:jpg,png,jpeg,pdf'],
+            // 'flazzCard' => ['required', 'mimes:jpg,png,jpeg,pdf'],
+            // 'IDCard' => ['required', 'mimes:jpg,png,jpeg,pdf'],
         ]);
     }
 
@@ -65,11 +78,33 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // $CVName = request()->file('CV')->getClientOriginalName();
+        // $CV = request()->file('CV')->storeAs('file-data', $CVName);
+
+        // $flazzCardName = request()->file('CV')->getClientOriginalName();
+        // $flazzCard = request()->file('CV')->storeAs('file-data', $flazzCardName);
+
+        // $IDCard_file_name = request()->file('IDCard')->getClientOriginalName();
+        // $IDCard = request()->file('IDCard')->storeAs('file-data', $IDCard_file_name);
+
         return User::create([
             'name' => $data['name'],
-            'teamName' => $data['teamName'],
             'email' => $data['email'],
+            'username' => $data['username'],
             'password' => Hash::make($data['password']),
+            'binusian' => $data['binusian'],
+            'fullName' => $data['fullName'],
+            // 'emailLeader' => $data['emailLeader'],
+            'whatsappNumber' => $data['whatsappNumber'],
+            'lineID' => $data['lineID'],
+            'githubGitlabID' => $data['githubGitlabID'],
+            'birthPlace' => $data['birthPlace'],
+            'dayBirthDate' => $data['dayBirthDate'],
+            'monthBirthDate' => $data['monthBirthDate'],
+            'yearBirthDate' => $data['yearBirthDate'],
+            // 'CV' => $CV,
+            // 'flazzCard' => $flazzCard,
+            // 'IDCard' => $IDCard,
         ]);
     }
 }

@@ -18,11 +18,24 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('role')->default('member');
             $table->string('name');
-            $table->string('teamName');
-            $table->string('email')->unique();
+            $table->string('email');
+            $table->string('username');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('remember_token')->default(Str::random(60));
+            $table->string('binusian');
+            $table->string('fullName');
+            // $table->string('emailLeader');
+            $table->string('whatsappNumber');
+            $table->string('lineID');
+            $table->string('githubGitlabID');
+            $table->string('birthPlace');
+            $table->string('dayBirthDate');
+            $table->string('monthBirthDate');
+            $table->string('yearBirthDate');
+            // $table->string('CV');
+            // $table->string('flazzCard');
+            // $table->string('IDCard');
             $table->timestamps();
         });
     }

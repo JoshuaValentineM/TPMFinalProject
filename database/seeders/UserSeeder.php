@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 
 class UserSeeder extends Seeder
 {
@@ -15,14 +16,23 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::truncate();
-        User::create([
+        DB::table('users')->insert([
             'role' => 'admin',
             'name' => 'admin',
-            'teamName' => 'admin',
-            'email' => 'admin@admin.net',
+            'username' => 'admin',
             'password' => bcrypt('Admin123!'),
             'remember_token' => Str::random(60),
+            'binusian' => 'binusian',
+            'fullName' => 'admin',
+            'email' => 'admin@admin.net',
+            // 'emailLeader' => $data['emailLeader'],
+            'whatsappNumber' => 'adminadminadmin',
+            'lineID' => 'admin',
+            'githubGitlabID' => 'admin',
+            'birthPlace' => 'admin',
+            'dayBirthDate' => 'admin',
+            'monthBirthDate' => 'admin',
+            'yearBirthDate' => 'admin',
         ]);
     }
 }

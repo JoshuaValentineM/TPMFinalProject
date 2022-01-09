@@ -109,33 +109,35 @@
         </a>
         </div>
 
+        <form method="POST" action="{{ route('register') }}">
+          @csrf
         <div class="registerForm">
-          <h3>Register to TechnoScape</h3>
+            <h3>Register to TechnoScape</h3>
 
-          <form>
+
             <div class="teamInformation">
               <h5>Team Information</h5>
               <div class="mb-3">
-                <label for="teamName" class="form-label">Team Name</label>
-                <input type="text" class="form-control" id="teamName" >
+                <label for="username" class="form-label">Team Name</label>
+                <input name="username" type="text" class="form-control" id="username" >
               </div>
               <div class="mb-3">
-                <label for="passwordTeam" class="form-label">Password</label>
-                <input type="password" class="form-control" id="passwordTeam" placeholder="Min. 8 characters containing an uppercase and lowercase letter, a number, and a symbol.">
+                <label for="password" class="form-label">Password</label>
+                <input name="password" type="password" class="form-control" id="password" placeholder="Min. 8 characters containing an uppercase and lowercase letter, a number, and a symbol.">
               </div>
               <div class="mb-3">
-                <label for="confirmPasswordTeam" class="form-label">Confirm Password</label>
-                <input type="password" class="form-control" id="confirmPasswordTeam">
+                <label for="password-confirm" class="form-label">{{ __('Confirm Password') }}</label>
+                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
               </div>
               <div class="checkboxStatus">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="binusian">
+                  <input name="binusian" class="form-check-input" type="checkbox" value="binusian" id="binusian">
                   <label class="form-check-label" for="binusian">
                     Binusian
                 </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="nonBinusian">
+                  <input name="binusian" class="form-check-input" type="checkbox" value="nonbinusian" id="nonBinusian">
                   <label class="form-check-label" for="nonBinusian">
                     Non-Binusian
                   </label>
@@ -145,47 +147,48 @@
 
             <div class="leaderInformation">
               <h5>Leader Information</h5>
+
               <div class="mb-3">
                 <label for="fullName" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="fullName" >
+                <input name="fullName" type="text" class="form-control" id="fullName" >
               </div>
               <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" >
+                <label for="email" class="form-label">Email Leader</label>
+                <input name="email" type="email" class="form-control" id="email" >
               </div>
               <div class="mb-3">
                 <label for="whatsappNumber" class="form-label">Whatsapp Number</label>
-                <input type="text" class="form-control" id="whatsappNumber" placeholder="+62" >
+                <input name="whatsappNumber" type="text" class="form-control" id="whatsappNumber" placeholder="+62" >
               </div>
               <div class="mb-3">
                 <label for="lineID" class="form-label">LINE ID</label>
-                <input type="text" class="form-control" id="lineID" >
+                <input name="lineID" type="text" class="form-control" id="lineID" >
               </div>
               <div class="mb-3">
                 <label for="githubGitlabID" class="form-label">Github/Gitlab ID</label>
-                <input type="text" class="form-control" id="githubGitlabID" >
+                <input name="githubGitlabID" type="text" class="form-control" id="githubGitlabID" >
               </div>
               <div class="mb-3">
                 <label for="birthPlace" class="form-label">Birth Place</label>
-                <input type="text" class="form-control" id="birthPlace" >
+                <input name="birthPlace" type="text" class="form-control" id="birthPlace" >
               </div>
               <div class="mb-3">
                 <label for="birthDate" class="label">Birth Date</label>
                 <div class="birthdate">
                   <div class="mb-3">
                     <label for="dayBirthDate" class="form-label" style="font-size: 10pt;">Day</label>
-                    <input type="text" class="form-control" id="dayBirthDate" placeholder="DD">
+                    <input name="dayBirthDate" type="text" class="form-control" id="dayBirthDate" placeholder="DD">
                   </div>
                   <div class="mb-3">
                     <label for="monthBirthDate" class="form-label" style="font-size: 10pt;">Month</label>
-                    <input type="text" class="form-control" id="monthBirthDate" placeholder="MM">
+                    <input name="monthBirthDate" type="text" class="form-control" id="monthBirthDate" placeholder="MM">
                   </div>
                   <div class="mb-3">
                     <label for="yearBirthDate" class="form-label"style="font-size: 10pt;" >Year</label>
-                    <input type="text" class="form-control" id="yearBirthDate" placeholder="YYYY">
+                    <input name="yearBirthDate" type="text" class="form-control" id="yearBirthDate" placeholder="YYYY">
                   </div>
                 </div>
-                <div class="mb-3">
+                {{-- <div class="mb-3">
                     <label for="CV" class="form-label">Curriculum Vitae (CV)</label>
                     <input type="file" class="form-control" id="CV" placeholder="Add file">
                   </div>
@@ -198,20 +201,14 @@
                       <label for="IDCard" class="form-label">ID Card (Non-Binusian)</label>
                       <input type="file" class="form-control" id="IDCard" >
                     </div>
-                  </div>
+                  </div> --}}
               </div>
             </div>
-              <button type="submit" class="btn btn-secondary">Register</button>
+              <button type="submit" class="btn btn-primary">{{ __('Register') }}</button>
             </form>
       </div>
       </div>
 
     </section>
-
-
-
-
-
-
 </body>
 </html>

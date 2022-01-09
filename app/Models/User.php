@@ -21,8 +21,22 @@ class User extends Authenticatable
         'role',
         'name',
         'email',
+        'username',
         'password',
-        'teamName',
+        'binusian',
+        'fullName',
+        // 'emailLeader',
+        'whatsappNumber',
+        'lineID',
+        'githubGitlabID',
+        'birthPlace',
+        'dayBirthDate',
+        'monthBirthDate',
+        'yearBirthDate',
+        // 'CV',
+        // 'flazzCard',
+        // 'IDCard',
+
     ];
 
     /**
