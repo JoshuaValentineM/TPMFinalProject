@@ -16,7 +16,6 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('role')->default('member');
             $table->string('name');
             $table->string('email');
             $table->string('username');
@@ -36,7 +35,6 @@ class CreateUsersTable extends Migration
             // $table->string('CV');
             // $table->string('flazzCard');
             // $table->string('IDCard');
-            $table->timestamps();
         });
     }
 
