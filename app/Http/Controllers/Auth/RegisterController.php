@@ -50,20 +50,21 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            'role' => ['required', 'string', 'max:255'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'username' => ['required', 'string', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/', 'confirmed'],
-            'binusian' => ['required', 'string'],
+            'binusian' => ['required', 'string', 'max:255'],
             'fullName' => ['required', 'string', 'max:255'],
             // 'emailLeader' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'whatsappNumber' => ['required', 'string', 'min:11', 'unique:users'],
-            'lineID' => ['required', 'string', 'unique:users'],
-            'githubGitlabID' => ['required', 'string'],
-            'birthPlace' => ['required', 'string'],
-            'dayBirthDate' => ['required', 'string'],
-            'monthBirthDate' => ['required', 'string'],
-            'yearBirthDate' => ['required', 'string'],
+            'whatsappNumber' => ['required', 'string', 'min:11', 'max:255', 'unique:users'],
+            'lineID' => ['required', 'string', 'max:255', 'unique:users'],
+            'githubGitlabID' => ['required', 'string', 'max:255'],
+            'birthPlace' => ['required', 'string', 'max:255'],
+            'dayBirthDate' => ['required', 'string', 'max:255'],
+            'monthBirthDate' => ['required', 'string', 'max:255'],
+            'yearBirthDate' => ['required', 'string', 'max:255'],
             // 'CV' => ['required', 'mimes:jpg,png,jpeg,pdf'],
             // 'flazzCard' => ['required', 'mimes:jpg,png,jpeg,pdf'],
             // 'IDCard' => ['required', 'mimes:jpg,png,jpeg,pdf'],
@@ -88,6 +89,7 @@ class RegisterController extends Controller
         // $IDCard = request()->file('IDCard')->storeAs('file-data', $IDCard_file_name);
 
         return User::create([
+            'role' => $data['role'],
             'name' => $data['name'],
             'email' => $data['email'],
             'username' => $data['username'],

@@ -119,28 +119,38 @@
               <h5>Team Information</h5>
               <div class="mb-3">
                 <label for="username" class="form-label">Team Name</label>
+                <div class="mb-3">
                 <input name="username" type="text" class="form-control" id="username" >
+              </div>
               </div>
               <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
+                <div class="mb-3">
                 <input name="password" type="password" class="form-control" id="password" placeholder="Min. 8 characters containing an uppercase and lowercase letter, a number, and a symbol.">
+              </div>
               </div>
               <div class="mb-3">
                 <label for="password-confirm" class="form-label">{{ __('Confirm Password') }}</label>
+                <div class="mb-3">
                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+              </div>
               </div>
               <div class="checkboxStatus">
                 <div class="form-check">
                   <input name="binusian" class="form-check-input" type="checkbox" value="binusian" id="binusian">
+                  <div class="mb-3">
                   <label class="form-check-label" for="binusian">
                     Binusian
                 </label>
                 </div>
+                </div>
                 <div class="form-check">
                   <input name="binusian" class="form-check-input" type="checkbox" value="nonbinusian" id="nonBinusian">
+                  <div class="mb-3">
                   <label class="form-check-label" for="nonBinusian">
                     Non-Binusian
                   </label>
+                </div>
                 </div>
               </div>
             </div>
@@ -150,42 +160,60 @@
 
               <div class="mb-3">
                 <label for="fullName" class="form-label">Full Name</label>
+                <div class="mb-3">
                 <input name="fullName" type="text" class="form-control" id="fullName" >
+              </div>
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email Leader</label>
+                <div class="mb-3">
                 <input name="email" type="email" class="form-control" id="email" >
+              </div>
               </div>
               <div class="mb-3">
                 <label for="whatsappNumber" class="form-label">Whatsapp Number</label>
+                <div class="mb-3">
                 <input name="whatsappNumber" type="text" class="form-control" id="whatsappNumber" placeholder="+62" >
+              </div>
               </div>
               <div class="mb-3">
                 <label for="lineID" class="form-label">LINE ID</label>
+                <div class="mb-3">
                 <input name="lineID" type="text" class="form-control" id="lineID" >
+              </div>
               </div>
               <div class="mb-3">
                 <label for="githubGitlabID" class="form-label">Github/Gitlab ID</label>
+                <div class="mb-3">
                 <input name="githubGitlabID" type="text" class="form-control" id="githubGitlabID" >
+              </div>
               </div>
               <div class="mb-3">
                 <label for="birthPlace" class="form-label">Birth Place</label>
+                <div class="mb-3">
                 <input name="birthPlace" type="text" class="form-control" id="birthPlace" >
+              </div>
               </div>
               <div class="mb-3">
                 <label for="birthDate" class="label">Birth Date</label>
                 <div class="birthdate">
                   <div class="mb-3">
                     <label for="dayBirthDate" class="form-label" style="font-size: 10pt;">Day</label>
+                    <div class="mb-3">
                     <input name="dayBirthDate" type="text" class="form-control" id="dayBirthDate" placeholder="DD">
+                  </div>
                   </div>
                   <div class="mb-3">
                     <label for="monthBirthDate" class="form-label" style="font-size: 10pt;">Month</label>
+                    <div class="mb-3">
                     <input name="monthBirthDate" type="text" class="form-control" id="monthBirthDate" placeholder="MM">
+                  </div>
                   </div>
                   <div class="mb-3">
                     <label for="yearBirthDate" class="form-label"style="font-size: 10pt;" >Year</label>
+                    <div class="mb-3">
                     <input name="yearBirthDate" type="text" class="form-control" id="yearBirthDate" placeholder="YYYY">
+                  </div>
                   </div>
                 </div>
                 {{-- <div class="mb-3">
