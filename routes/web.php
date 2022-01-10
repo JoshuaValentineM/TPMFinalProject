@@ -32,6 +32,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/dashboard', [MemberController::class, 'getDashboard'])->name('getDashboard');
 
+Route::get('/admin-dashboard', function () {
+    return view('admindashboard');
+});
+
 Route::group(['middleware' => IsAdminMiddleware::class], function () {
     Route::get('/welcome-admin', function () {
         return ('welcome Admin!');

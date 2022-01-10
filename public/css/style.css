@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: reem kufi;
+}
+
+/* navbar */
+nav {
+    z-index: 1000;
+    position: sticky !important;
+    top: 0;
+}
+
+#navbar-logo {
+    max-height: 50px;
+    filter: invert(100%);
+}
+
+.nav-item {
+    margin: 0 2vw 0 2vw;
+}
+
+body {
+    background-color: #0a0e2f;
+}
+
+p {
+    color: #fff;
+}
+
+h1 {
+    color: #fff;
+}
+
+h2 {
+    color: #fff;
+}
+
+h3 {
+    color: #fff;
+}
+
+.main-title {
+    margin-bottom: 30px;
+}
+
+.round-corners {
+    border-radius: 5%;
+}
+
+iframe {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* home */
+#home-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10%;
+}
+
+/* about */
+#about-section {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+#about-container {
+    max-width: 90%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.about-text-btn {
+    max-width: 45%;
+    margin: 5%;
+}
+
+.about-video {
+    background-color: grey;
+    width: 55%;
+    height: 50%;
+    align-self: center;
+}
+
+/* prize */
+#prizes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#prizes>div {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.prize-container {
+    width: 25%;
+    height: 450px;
+    background-color: white;
+}
+
+/* why participate */
+#why-participate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.imgcap {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.slideshowcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.slideshow-controls {
+    display: flex;
+}
+
+.prev,
+.next {
+    display: flex;
+    cursor: pointer;
+    align-self: center;
+    color: white;
+    margin: 0px 10px 0px 10px;
+    padding: 10px;
+    padding-bottom: 35px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 20px;
+    height: 20px;
+    transition: 0.6s ease;
+    border-radius: 25px;
+    user-select: none;
+    text-align: center;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: #DA0037;
+}
+
+.fadewhy {
+    -webkit-animation-name: fadewhy;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fadewhy;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fadewhy {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadewhy {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.actgroupwhy {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+/* timeline */
+#timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* mentor jury */
+#mentor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: grey;
+}
+
+#jury {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: lightcyan;
+}
+
+/* togleswitch */
+.toggle-mentor-jury {
+    display: flex;
+}
+
+.mentor-jury-selector {
+    text-decoration: none;
+    margin: 0 20px 0 20px;
+    color: black;
+}
+
+#Design {
+    color: Blue;
+}
+
+/* FAQ */
+#FAQ {
+    display: flex;
+    min-height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.accordion {
+    width: 60%;
+}
+
+/*
+Other events */
+#other-event {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.event-container {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+}
+
+.events {
+    display: flex;
+    width: 45%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    background-color: grey;
+}
+
+/* sponsors */
+#sponsors {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: space-around;
+}
+
+.platinum-sponsor {
+    height: 180px;
+    width: 320px;
+    background-color: white;
+}
+
+.gold-sponsor-container {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.gold-sponsor {
+    height: 90px;
+    width: 160px;
+    background-color: white;
+}
+
+.silver-sponsor-container {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.silver-sponsor {
+    height: 60px;
+    width: 107px;
+    background-color: white;
+}
+
+/* Media partners */
+#med-part {
+    background-color: lightcyan;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.media-partner {
+    height: 180px;
+    width: 320px;
+    background-color: green;
+    margin: 50px;
+    display: inline-block;
+}
+
+/* get in touch */
+#get-in-touch {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.get-in-touch-wrap {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.text-social-media-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-form {
+    background-color: lightgrey;
+    padding: 5%;
+    width: 40%;
+}
+
+/* Footage */
+#footage {
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+/* footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: lightgrey;
+    padding: 2%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+#logoTSfooter {
+    filter: invert(100%);
+    max-height: 50px;
+}
+
+.footer-heading {
+    color: #0a0e2f;
+    font-weight: 700;
+}
+
+.footer-logo-size {
+    width: 35px;
+}
+
+.copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-copyright {
+    color: #0a0e2f;
+}
