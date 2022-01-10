@@ -232,7 +232,9 @@
                   </div> --}}
               </div>
             </div>
+            <div>
               <button type="submit" class="btn btn-primary">{{ __('Register') }}</button>
+            </div>
             </form>
       </div>
       </div>
