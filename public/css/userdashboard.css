@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: reem kufi;
+    margin: 0;
+    padding: 0;
+}
+
+#user-dashboard {
+    display: flex;
+    justify-content: center;
+}
+
+.userdashboard-container {
+    background-color: grey;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    margin: 5%;
+    border-radius: 40px;
+}
+
+.birthdate {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.idCard {
+    display: flex;
+    justify-content: space-between;
+}

@@ -76,6 +76,10 @@
 </div>
 @endsection --}}
 
+<head>
+    <link rel="stylesheet" type="css" href="styleRegister.css">
+ </head>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -96,7 +100,9 @@
 
     <section class="registerPage">
       <div class="leftRegisterPage">
-        <div>logo</div>
+        <div>
+            <img src="{{ ('img/LogoTSfull.svg') }}" >
+        </div>
         <h2>[tagline]</h2>
 
       </div>
@@ -113,7 +119,6 @@
           @csrf
         <div class="registerForm">
             <h3>Register to TechnoScape</h3>
-
 
             <div class="teamInformation">
               <h5>Team Information</h5>

@@ -19,7 +19,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'role',
-        'name',
+        // 'name',
         'email',
         'username',
         'password',
@@ -38,6 +38,11 @@ class User extends Authenticatable
         // 'IDCard',
 
     ];
+
+    public function member()
+    {
+        return $this->hasMany(Member::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

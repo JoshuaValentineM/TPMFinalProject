@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HackatonController;
+use App\Http\Controllers\MemberController;
 use App\Http\Middleware\IsAdminMiddleware;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,8 @@ Auth::routes();
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/dashboard', [MemberController::class, 'getDashboard'])->name('getDashboard');
 
 Route::group(['middleware' => IsAdminMiddleware::class], function () {
     Route::get('/welcome-admin', function () {
