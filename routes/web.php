@@ -41,4 +41,8 @@ Route::group(['middleware' => IsAdminMiddleware::class], function () {
     Route::get('/admin-dashboard', function () {
         return view('admindashboard');
     });
+
+    Route::get('/admin-participants', function () {
+        return view('adminparticipants');
+    });
 });
