@@ -50,12 +50,13 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'role' => ['required', 'string', 'max:255'],
+            // 'role' => ['required', 'string', 'max:255'],
             // 'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             //username == teamname
             'username' => ['required', 'string', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/', 'confirmed'],
+            // 'password' => ['required', 'string'],
             'binusian' => ['required', 'string', 'max:255'],
             'fullName' => ['required', 'string', 'max:255'],
             // 'emailLeader' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -67,7 +68,7 @@ class RegisterController extends Controller
             'monthBirthDate' => ['required', 'string', 'max:255'],
             'yearBirthDate' => ['required', 'string', 'max:255'],
             'CV' => ['required', 'mimes:jpg,png,jpeg,pdf'],
-            // 'flazzCard' => ['required', 'mimes:jpg,png,jpeg,pdf'],
+            // // // 'flazzCard' => ['required', 'mimes:jpg,png,jpeg,pdf'],
             'IDCard' => ['required', 'mimes:jpg,png,jpeg,pdf'],
         ]);
     }
@@ -90,7 +91,7 @@ class RegisterController extends Controller
         // $IDCard = request()->file('IDCard')->storeAs('file-data', $IDCard_file_name);
 
         return User::create([
-            'role' => $data['role'],
+            // 'role' => $data['role'],
             // 'name' => $data['name'],
             'email' => $data['email'],
             'username' => $data['username'],
@@ -106,7 +107,7 @@ class RegisterController extends Controller
             'monthBirthDate' => $data['monthBirthDate'],
             'yearBirthDate' => $data['yearBirthDate'],
             'CV' => $data['CV'],
-            // 'flazzCard' => $data['flazzCard'],
+            // // // 'flazzCard' => $data['flazzCard'],
             'IDCard' => $data['IDCard'],
         ]);
     }

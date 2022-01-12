@@ -115,7 +115,7 @@
         </a>
         </div>
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
           @csrf
         <div class="registerForm">
             <h3>Register to TechnoScape</h3>
@@ -223,16 +223,16 @@
                 </div>
                 <div class="mb-3">
                     <label for="CV" class="form-label">Curriculum Vitae (CV)</label>
-                    <input type="file" class="form-control" id="CV" placeholder="Add file">
+                    <input name="CV" type="file" class="form-control" id="CV" placeholder="Add file">
                   </div>
                   <div class="idCard">
                     {{-- <div class="mb-3">
-                      <label for="flazzCard" class="form-label">Flazz Card (Binusian)</label>
-                      <input type="file" class="form-control" id="flazzCard" >
+                      <label for="IDCard" class="form-label">Flazz Card (Binusian)</label>
+                      <input name="IDCard" type="file" class="form-control" id="IDCard" >
                     </div> --}}
                     <div class="mb-3">
-                      <label for="IDCard" class="form-label">ID Card (Non-Binusian)</label>
-                      <input type="file" class="form-control" id="IDCard" >
+                      <label for="IDCard" class="form-label">ID Card (Non-Binusian) / FlazzCard (Binusian)</label>
+                      <input name="IDCard" type="file" class="form-control" id="IDCard" >
                     </div>
                   </div>
               </div>

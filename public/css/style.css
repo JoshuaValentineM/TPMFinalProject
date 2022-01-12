@@ -16,6 +16,18 @@ nav {
     filter: invert(100%);
 }
 
+.btn {
+    background-color: #9152FE;
+    color: #fff;
+    border: none;
+}
+
+.grad {
+    background-image: linear-gradient(to right, #FB4FFF, #9152FE);
+    color: #fff;
+    border: none;
+}
+
 .nav-item {
     margin: 0 2vw 0 2vw;
 }
@@ -559,7 +571,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: lightgrey;
+    background-color: #C4C4C4;
     padding: 2%;
 }
 

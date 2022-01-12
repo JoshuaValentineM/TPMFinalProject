@@ -12,7 +12,7 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#"><img src="{{ ('img/LogoTSfull.svg') }}" id="navbar-logo"></a>
+          <a class="navbar-brand" href="{{ route('halamanUtama') }}"><img src="{{ ('img/LogoTSfull.svg') }}" id="navbar-logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -62,14 +62,16 @@
                 </tr>
               </thead>
               <tbody>
+                @foreach ($teams as $team )
                 <tr>
-                  <th scope="row"><i class="fas fa-check-circle"></i></th>
-                  <td>Team Name 1</td>
+                  <th scope="column"><i class="fas fa-check-circle"></i></th>
+                  <td>{{ $team->username}}</td>
                   <td>Rp 7200.000,-</td>
                   <td><button>View</button></td>
                   <td><button>Verify</button></td>
+                  @endforeach
                 </tr>
-                <tr>
+                {{-- <tr>
                   <th scope="row"><i class="fas fa-circle"></i></th>
                   <td>Team Name 1</td>
                   <td>Rp 7200.000,-</td>
@@ -82,7 +84,7 @@
                   <td>Rp 7200.000,-</td>
                   <td><button>View</button></td>
                   <td><button>Verify</button></td>
-                </tr>
+                </tr> --}}
               </tbody>
             </table>
         </div>

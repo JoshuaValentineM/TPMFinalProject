@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: reem kufi;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: rgb(10, 14, 47);
+}
+
+#user-dashboard {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    max-height: 50px;
+    filter: invert(100%);
+}
+
+h2 {
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+h1 {
+    display: flex;
+    padding-top: 30px;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+h3 {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+h4 {
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+}
+
+.payment-container>h4 {
+    padding-top: 50px;
+}
+
+.payment-container {
+    background-color: white;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    margin: 5%;
+    border-radius: 40px;
+}
+
+.box-container {
+    display: flex;
+    justify-content: center;
+}
+
+.earlyBird-container {
+    background-color: white;
+    border: 6px solid rgb(196, 196, 196);
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    margin: 5%;
+    border-radius: 40px;
+}
+
+.normalPrice-container {
+    background-color: white;
+    border: 6px solid rgb(196, 196, 196);
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    padding: 5%;
+    margin: 5%;
+    border-radius: 40px;
+}
+
+.binusian-price {
+    border-right: 6px solid rgb(196, 196, 196);
+    width: 50%;
+    height: 100%;
+}
+
+.rekeningTransfer {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    padding: 5%;
+    margin: 5%;
+}
+
+.paymentVerification>p {
+    color: white;
+    font-size: 24px;
+}
+
+.box-container>.payment-indicator {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.file {
+    margin-left: 26%;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    background-image: url(/Assets/Add\ File\ Button.svg);
+    background-size: cover;
+    width: 149px;
+    height: 64px;
+    overflow: hidden;
+
+}

@@ -65,7 +65,7 @@
                   <li><a class="dropdown-item" href="#timeline">Timeline</a></li>
                 </ul>
               </li>
-              <button onclick="window.location.href='{{ route('login') }}'" class="btn btn-outline-success" type="submit">Login</button>
+              <button onclick="window.location.href='{{ route('login') }}'" class="btn btn-outline-success rounded-pill" type="submit">Login</button>
             </ul>
           </div>
           </div>
@@ -83,8 +83,8 @@
           <h1>About Hackathon 5.0</h1>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores accusantium illum alias quasi laudantium dolorum culpa repellat illo assumenda, eius vero suscipit est reiciendis pariatur, aut perferendis quia aperiam quo!</p>
           <div class="about-btn">
-            <button onclick="window.location.href='{{ route('register') }}'" class="btn btn-outline-success" type="submit">Register NOW!</button>
-            <button onclick="window.location.href='https://drive.google.com/drive/folders/1cIpdLUcnFWNNNNblFVaZj7W1PM8IIsVA?usp=sharing'" class="btn btn-outline-success" type="submit">Download Guidebook</button>
+            <button onclick="window.location.href='{{ route('register') }}'" class="btn btn-outline-success rounded-pill" type="submit">Register NOW!</button>
+            <button onclick="window.location.href='https://drive.google.com/drive/folders/1cIpdLUcnFWNNNNblFVaZj7W1PM8IIsVA?usp=sharing'" class="btn btn-outline-success rounded-pill" type="submit">Download Guidebook</button>
 
           </div>
         </div>
@@ -290,11 +290,11 @@
       <div class="event-container">
         <div class="events round-corners" id="virtualconference">
           <h2>Virtual Conference</h2>
-          <button>Find out More</button>
+          <button class="rounded-pill btn grad">Find out More</button>
         </div>
         <div class="events round-corners" id="developerworkshop">
           <h2>Developer Workshop</h2>
-          <button>Find out More</button>
+          <button class="rounded-pill btn grad">Find out More</button>
         </div>
       </div>
     </section>
@@ -347,14 +347,14 @@
           </div>
         </div>
         <div class="contact-form round-corners">
-          <form action="https://formspree.io/f/xwkypdyy" method="POST" id="contact-us-form">
+          <form action="https://formspree.io/f/mbjwdjdr" method="POST" id="contact-us-form">
             <div class="mb-3">
               <label for="contactname" class="form-label">Your Name</label>
-              <input type="text" name="message" class="form-control" id="contactname" placeholder="Enter your name" required>
+              <input type="text" name="name" class="form-control" id="contactname" placeholder="Enter your name" required>
             </div>
             <div class="mb-3">
               <label for="contactemail" class="form-label">Email Address</label>
-              <input type="email" name="sender's email" class="form-control" id="contactemail" placeholder="Enter your email address" required>
+              <input type="email" name="_replyto" class="form-control" id="contactemail" placeholder="Enter your email address" required>
             </div>
             <div class="mb-3">
               <label for="contactsubject" class="form-label">Subject</label>
@@ -362,10 +362,33 @@
             </div>
             <div class="mb-3">
               <label for="contactmessage" class="form-label">Message</label>
-              <textarea class="form-control" id="contactmessage" rows="3"  placeholder="Enter your message" required></textarea>
+              <textarea name="message" class="form-control" id="contactmessage" rows="3"  placeholder="Enter your message" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
+            <button type="submit" id="my-form-button" class="rounded-pill btn grad">Send Message</button>
+            <p id="my-form-status"></p>
           </form>
+          <script>
+            var form = document.getElementById("my-form");
+
+            async function handleSubmit(event) {
+              event.preventDefault();
+              var status = document.getElementById("my-form-status");
+              var data = new FormData(event.target);
+              fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+              }).then(response => {
+                status.innerHTML = "Thanks for your submission!";
+                form.reset()
+              }).catch(error => {
+                status.innerHTML = "Oops! There was a problem submitting your form"
+              });
+            }
+            form.addEventListener("submit", handleSubmit)
+        </script>
         </div>
       </div>
 

@@ -17,6 +17,9 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+    public $timestamps = false;
+
     protected $fillable = [
         'role',
         // 'name',
@@ -35,7 +38,7 @@ class User extends Authenticatable
         'monthBirthDate',
         'yearBirthDate',
         'CV',
-        // 'flazzCard',
+        // // 'flazzCard',
         'IDCard',
 
     ];

@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: reem kufi;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0a0e2f;
+}
+
+#navbar-logo {
+    max-height: 50px;
+    filter: invert(100%);
+}
+
+h1 {
+    color: #fff;
+}
+
+#user-timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+#user-timeline>div {
+    width: 50%;
+    height: 50%;
+    margin-bottom: 5%
+}
+
+.timeline-part {
+    width: 100%;
+}
+
+.timeline-part:hover {
+    opacity: .9;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechnoScape</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('css/stylepayment.css')}}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{{ route('halamanUtama') }}"><img src="{{ ('img/LogoTSfull.svg') }}" class="logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{ route('getDashboard') }}">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{ '/payment' }}">Payment</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{ '/timeline' }}">Timeline</a>
+              </li>
+              <button class="btn btn-outline-success" type="submit">Logout</button>
+            </ul>
+          </div>
+          </div>
+    </nav>
+
+    <!-- payment-->
+
+    <section id="payment" >
+        <h2>Registration Period</h2>
+        <h1>Opens in 12 days, 5 hours, 4 minutes</h1>
+
+        <div class="box-container">
+          <div class="payment-container">
+            <h3>Registration Payment</h3>
+            <h4>Early Bird Offer</h4>
+
+            <div class="box-container">
+              <div class="earlyBird-container">
+                <h4>7 days 0 hours left</h4>
+                <p>Rp 720.000,-</p>
+              </div>
+            </div>
+
+            <div class="box-container">
+              <div class="normalPrice-container">
+                <div class="binusian-price">
+                    <h4>Binusian</h4>
+                    <p>Rp 960.000,-</p>
+                </div>
+                <div class="nonBinusian-price">
+                    <h4>Non-Binusian</h4>
+                    <p>Rp 1.200.000,-</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="rekeningTransfer">
+                <div class="rekeningTujuan">
+                   <p>via Bank Transfer to</p>
+                    <p>XXX-XXX-XXXX</p>
+                    <p>BCA</p>
+                    <p>a.n. Andi Budi</p>
+                </div>
+                <div class="qrCode">
+                    <div>qr</div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="paymentVerification">
+            <p>Waiting for verification...</p>
+
+            <div class="box-container">
+              <img src="{{ ('img/Payment Indicator (Shape).svg') }}" alt="payment-indicator">
+            </div>
+            <input type="file" class="form-control file" id="payment-proof" placeholder="Add file">
+
+            <!-- <div class="box-container">
+              <div class="payment-indicator">
+                <div class="payment-proof">
+                  <img src="./Assets/Status (Finished - Checklist).svg" alt="finished">
+                  <p>Upload Proof of Payment</p>
+                </div>
+                <div class="status-verification">
+                  <img src="./Assets/Status (Pending - Clock).svg" alt="pending">
+                  <p>Verification</p>
+                </div>
+                <div class="payment-ready">
+                  <img src="./Assets/Status (Pending - Dotted Circle).svg" alt="pending dotted">
+                  <p>You're ready to go!</p>
+                </div>
+              </div>
+            </div> -->
+        </div>
+
+
+    </section>
+
+
+
+</body>
+</html>
