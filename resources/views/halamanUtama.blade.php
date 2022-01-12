@@ -84,7 +84,8 @@
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores accusantium illum alias quasi laudantium dolorum culpa repellat illo assumenda, eius vero suscipit est reiciendis pariatur, aut perferendis quia aperiam quo!</p>
           <div class="about-btn">
             <button onclick="window.location.href='{{ route('register') }}'" class="btn btn-outline-success" type="submit">Register NOW!</button>
-            <button class="btn btn-outline-success" type="submit">Download Guidebook</button>
+            <button onclick="window.location.href='https://drive.google.com/drive/folders/1cIpdLUcnFWNNNNblFVaZj7W1PM8IIsVA?usp=sharing'" class="btn btn-outline-success" type="submit">Download Guidebook</button>
+
           </div>
         </div>
       </div>
