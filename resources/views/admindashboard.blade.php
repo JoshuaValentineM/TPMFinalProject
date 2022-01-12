@@ -24,7 +24,7 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{ ('/admin-participants') }}">Participants</a>
               </li>
-              <button class="btn btn-outline-success" type="submit">Logout</button>
+              <button onclick="window.location.href='{{ route('logout') }}'" class="btn btn-outline-success" type="submit">Logout</button>
             </ul>
           </div>
           </div>
