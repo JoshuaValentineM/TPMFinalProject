@@ -31,6 +31,8 @@
     <title>Technoscape</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
@@ -81,7 +83,7 @@
           <h1>About Hackathon 5.0</h1>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores accusantium illum alias quasi laudantium dolorum culpa repellat illo assumenda, eius vero suscipit est reiciendis pariatur, aut perferendis quia aperiam quo!</p>
           <div class="about-btn">
-            <button class="btn btn-outline-success" type="submit">Register NOW!</button>
+            <button onclick="window.location.href='{{ route('register') }}'" class="btn btn-outline-success" type="submit">Register NOW!</button>
             <button class="btn btn-outline-success" type="submit">Download Guidebook</button>
           </div>
         </div>
@@ -100,15 +102,15 @@
       <div class="slideshowcontainer">
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
       <div class="actgroupwhy fadewhy">
-        <img src="{{ ('img/temp.jpg') }}" class="portofolio round-corners">
+        <img src="{{ ('img/temp.jpg') }}" class="round-corners">
             <p class="imgcap">reason 1</p>
       </div>
       <div class="actgroupwhy fadewhy">
-        <img src="{{ ('img/temp.jpg') }}" class="portofolio round-corners">
+        <img src="{{ ('img/temp.jpg') }}" class="round-corners">
             <p class="imgcap">reason 2</p>
       </div>
       <div class="actgroupwhy fadewhy">
-        <img src="{{ ('img/temp.jpg') }}" class="portofolio round-corners">
+        <img src="{{ ('img/temp.jpg') }}" class="round-corners">
             <p class="imgcap">reason 3</p>
       </div>
       <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -121,7 +123,12 @@
     </section>
     <timeline class="container-fluid" id="timeline">
       <h1 class="main-title">Timeline</h1>
-      <img src="Assets/">
+      <div class="timeline-container">
+        <img src="{{ ('img/Open Reg.svg') }}" class="timeline-part">
+        <img src="{{ ('img/Close Reg.svg') }}" class="timeline-part">
+        <a href="#"><img src="{{ ('img/TechMeet.svg') }}" class="timeline-part"></a>
+        <a href="#"><img src="{{ ('img/Comp Day.svg') }}"  class="timeline-part"></a>
+      </div>
     </timeline>
     <section class="container-fluid" id="mentor">
       <div class="toggle-mentor-jury">
@@ -129,9 +136,76 @@
         <a onclick="showTechnology()" id="Technology" class="mentor-jury-selector"><h3>Technology</h3></a>
         <a onclick="showBusiness()" id="Business" class="mentor-jury-selector"><h3>Business</h3></a>
       </div>
+      <div class="mentor-carousel-segment">
+        <div><h1 class="mentor-jury-title">Our Mentor</h1></div>
+        <div>
+            <div class="slideshowcontainermentor">
+            <div class="actgroupmentor fadewhy">
+                  <img src="{{ ('img/temp.jpg') }}" class="round-corners" id="design-mentor1">
+                  <img src="{{ ('img/temp.jpg') }}" class="round-corners" id="technology-mentor1">
+                  <img src="{{ ('img/temp.jpg') }}" class="round-corners" id="business-mentor1">
+                  <p class="imgcap" id="design-mentor1-cap">design 1</p>
+                  <p class="imgcap" id="technology-mentor1-cap">technology 1</p>
+                  <p class="imgcap" id="business-mentor1-cap">business 1</p>
+            </div>
+            <div class="actgroupmentor fadewhy">
+              <img src="{{ ('img/temp.jpg') }}" class="round-corners" id="design-mentor2">
+              <img src="{{ ('img/temp.jpg') }}" class="round-corners" id="technology-mentor2">
+              <img src="{{ ('img/temp.jpg') }}" class="round-corners" id="business-mentor2">
+              <p class="imgcap" id="design-mentor2-cap">design 2</p>
+              <p class="imgcap" id="technology-mentor2-cap">technology 2</p>
+              <p class="imgcap" id="business-mentor2-cap">business 2</p>
+            </div>
+            <div class="actgroupmentor fadewhy">
+              <img src="{{ ('img/temp.jpg') }}" class="round-corners" id="design-mentor3">
+              <img src="{{ ('img/temp.jpg') }}" class="round-corners" id="technology-mentor3">
+              <img src="{{ ('img/temp.jpg') }}" class="round-corners" id="business-mentor3">
+              <p class="imgcap" id="design-mentor3-cap">design 3</p>
+              <p class="imgcap" id="technology-mentor3-cap">technology 3</p>
+              <p class="imgcap" id="business-mentor3-cap">business 3</p>
+            </div>
+            </div>
+            <div class="slideshow-controls">
+              <a class="prevmentor" onclick="plusSlidesmentor(-1)">&#10094;</a>
+              <a class="nextmentor" onclick="plusSlidesmentor(1)">&#10095;</a>
+            </div>
+            <div class="sliderprogress">
+              <span class="doti"></span>
+              <span class="doti"></span>
+              <span class="doti"></span>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="container-fluid" id="jury">
-
+        <div class="jury-carousel-segment">
+            <div><h1 class="mentor-jury-title">Our Jury</h1></div>
+            <div>
+                <div class="slideshowcontainerjury">
+                <div class="actgroupjury fadewhy">
+                      <img src="{{ ('img/temp.jpg') }}" class="round-corners">
+                      <p class="imgcap">jury 1</p>
+                </div>
+                <div class="actgroupjury fadewhy">
+                  <img src="{{ ('img/temp.jpg') }}" class="round-corners">
+                  <p class="imgcap">jury 2</p>
+                </div>
+                <div class="actgroupjury fadewhy">
+                  <img src="{{ ('img/temp.jpg') }}" class="round-corners">
+                  <p class="imgcap">jury 3</p>
+                </div>
+                </div>
+                <div class="slideshow-controls">
+                  <a class="prevjury" onclick="plusSlidesjury(-1)">&#10094;</a>
+                  <a class="nextjury" onclick="plusSlidesjury(1)">&#10095;</a>
+                </div>
+                <div class="sliderprogress">
+                  <span class="doti"></span>
+                  <span class="doti"></span>
+                  <span class="doti"></span>
+              </div>
+            </div>
+          </div>
     </section>
     <section class="container-fluid" id="FAQ">
       <div class="FAQ-left"><h1>FAQs</h1></div>
@@ -330,6 +404,6 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="Scripts/scripts.js"></script>
+    <script src="{{asset('js/scripts.js')}}"></script>
 </body>
 </html>

@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('role')->default('member');
             // $table->string('name');
             $table->string('email');
+            //username == teamname
             $table->string('username');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
@@ -33,9 +34,9 @@ class CreateUsersTable extends Migration
             $table->string('dayBirthDate');
             $table->string('monthBirthDate');
             $table->string('yearBirthDate');
-            // $table->string('CV');
-            // $table->string('flazzCard');
-            // $table->string('IDCard');
+            $table->string('CV');
+            $table->string('flazzCard');
+            $table->string('IDCard');
         });
     }
 

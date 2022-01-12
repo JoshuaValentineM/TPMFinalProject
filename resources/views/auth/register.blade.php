@@ -221,7 +221,7 @@
                   </div>
                   </div>
                 </div>
-                {{-- <div class="mb-3">
+                <div class="mb-3">
                     <label for="CV" class="form-label">Curriculum Vitae (CV)</label>
                     <input type="file" class="form-control" id="CV" placeholder="Add file">
                   </div>
@@ -234,7 +234,7 @@
                       <label for="IDCard" class="form-label">ID Card (Non-Binusian)</label>
                       <input type="file" class="form-control" id="IDCard" >
                     </div>
-                  </div> --}}
+                  </div>
               </div>
             </div>
             <div>

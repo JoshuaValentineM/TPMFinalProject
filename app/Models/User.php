@@ -21,6 +21,7 @@ class User extends Authenticatable
         'role',
         // 'name',
         'email',
+        //username == teamname
         'username',
         'password',
         'binusian',
@@ -33,9 +34,9 @@ class User extends Authenticatable
         'dayBirthDate',
         'monthBirthDate',
         'yearBirthDate',
-        // 'CV',
-        // 'flazzCard',
-        // 'IDCard',
+        'CV',
+        'flazzCard',
+        'IDCard',
 
     ];
 
