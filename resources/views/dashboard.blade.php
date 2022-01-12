@@ -37,13 +37,27 @@
     </nav>
     <section id="user-dashboard">
       <div class="userdashboard-container">
-        <h1>welcome, __________</h1>
+        <h1>welcome,
+        @foreach ($leaders as $leader )
+        {{ $leader->fullName }}
+        @endforeach
+    </h1>
         <hr>
         <div id="user-members">
             <h4 class="text-center">Members</h4>
-            <p>Leader</p>
-            <p>Member 1</p>
-            <p>Member 2</p>
+
+            <tbody>
+                @foreach ($members as $member )
+                <tr>
+                    <div>
+                        <th scope="column">{{ $member->fullName}}</th>
+                    </div>
+                </tr>
+                @endforeach
+            </tbody>
+            <div>
+
+            </div>
             <button class="btn btn-outline-success" type="submit">Add member</button>
         </div>
         <hr>
