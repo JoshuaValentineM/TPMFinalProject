@@ -226,10 +226,10 @@
                     <input type="file" class="form-control" id="CV" placeholder="Add file">
                   </div>
                   <div class="idCard">
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                       <label for="flazzCard" class="form-label">Flazz Card (Binusian)</label>
                       <input type="file" class="form-control" id="flazzCard" >
-                    </div>
+                    </div> --}}
                     <div class="mb-3">
                       <label for="IDCard" class="form-label">ID Card (Non-Binusian)</label>
                       <input type="file" class="form-control" id="IDCard" >

@@ -35,7 +35,7 @@ class User extends Authenticatable
         'monthBirthDate',
         'yearBirthDate',
         'CV',
-        'flazzCard',
+        // 'flazzCard',
         'IDCard',
 
     ];

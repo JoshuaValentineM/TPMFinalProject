@@ -35,7 +35,7 @@ class CreateUsersTable extends Migration
             $table->string('monthBirthDate');
             $table->string('yearBirthDate');
             $table->string('CV');
-            $table->string('flazzCard');
+            // $table->string('flazzCard');
             $table->string('IDCard');
         });
     }

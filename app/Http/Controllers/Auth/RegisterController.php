@@ -67,7 +67,7 @@ class RegisterController extends Controller
             'monthBirthDate' => ['required', 'string', 'max:255'],
             'yearBirthDate' => ['required', 'string', 'max:255'],
             'CV' => ['required', 'mimes:jpg,png,jpeg,pdf'],
-            'flazzCard' => ['required', 'mimes:jpg,png,jpeg,pdf'],
+            // 'flazzCard' => ['required', 'mimes:jpg,png,jpeg,pdf'],
             'IDCard' => ['required', 'mimes:jpg,png,jpeg,pdf'],
         ]);
     }
@@ -106,7 +106,7 @@ class RegisterController extends Controller
             'monthBirthDate' => $data['monthBirthDate'],
             'yearBirthDate' => $data['yearBirthDate'],
             'CV' => $data['CV'],
-            'flazzCard' => $data['flazzCard'],
+            // 'flazzCard' => $data['flazzCard'],
             'IDCard' => $data['IDCard'],
         ]);
     }

@@ -16,7 +16,7 @@ class CreateMembersTable extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('fullName');
             $table->string('email');
             $table->string('whatsappNumber');
             $table->string('lineID');
@@ -29,9 +29,9 @@ class CreateMembersTable extends Migration
             $table->foreign('teamId')->references('id')->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            // $table->string('CV');
+            $table->string('CV');
             // $table->string('flazzCard');
-            // $table->string('IDCard');
+            $table->string('IDCard');
             $table->timestamps();
         });
     }

@@ -10,7 +10,7 @@ class Member extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
+        'fullName',
         'email',
         'whatsappNumber',
         'lineID',
@@ -19,9 +19,9 @@ class Member extends Model
         'dayBirthDate',
         'monthBirthDate',
         'yearBirthDate',
-        // 'CV',
+        'CV',
         // 'flazzCard',
-        // 'IDCard',
+        'IDCard',
         'teamId',
     ];
 

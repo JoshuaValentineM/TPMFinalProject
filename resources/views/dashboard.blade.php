@@ -1,8 +1,3 @@
-<head>
-    <link rel="stylesheet" type="css" href="userdashboard.css">
- </head>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +30,7 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Timeline</a>
               </li>
-              <button class="btn btn-outline-success" type="submit">Logout</button>
+              <button onclick="window.location.href='{{ route('logout') }}'"class="btn btn-outline-success" type="submit">Logout</button>
             </ul>
           </div>
           </div>
@@ -54,54 +49,55 @@
         <hr>
         <div id="user-information">
             <h4 class="text-center">Member Information</h4>
-            <form>
+            <form action="{{route('createMember', ['id'=>$teamId])}}" method="POST" enctype="multipart/form-data">
+                @csrf
               <div class="mb-3">
-                <label for="userfullname" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="userfullname">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input name="fullName" type="text" class="form-control" id="fullName">
               </div>
               <div class="mb-3">
-                <label for="useremail" class="form-label">Email</label>
-                <input type="email" class="form-control" id="useremail">
+                <label for="email" class="form-label">Email</label>
+                <input name="email" type="email" class="form-control" id="email">
               </div>
               <div class="mb-3">
-                <label for="usernumber" class="form-label">Whatsapp Number</label>
-                <input type="text" class="form-control" id="usernumber" placeholder="+62">
+                <label for="whatsappNumber" class="form-label">Whatsapp Number</label>
+                <input name="whatsappNumber" type="text" class="form-control" id="whatsappNumber" placeholder="+62">
               </div>
               <div class="mb-3">
-                <label for="userline" class="form-label">Line ID</label>
-                <input type="text" class="form-control" id="userline">
+                <label for="lineID" class="form-label">Line ID</label>
+                <input name="lineID" type="text" class="form-control" id="lineID">
               </div>
               <div class="mb-3">
-                <label for="usergit" class="form-label">Github/Gitlab ID</label>
-                <input type="text" class="form-control" id="usergit">
+                <label for="githubGitlabID" class="form-label">Github/Gitlab ID</label>
+                <input name="githubGitlabID" type="text" class="form-control" id="githubGitlabID">
               </div>
               <div class="mb-3">
-                <label for="userbirthplace" class="form-label">Birthplace</label>
-                <input type="text" class="form-control" id="userbirthplace">
+                <label for="birthPlace" class="form-label">Birthplace</label>
+                <input name="birthPlace" type="text" class="form-control" id="birthPlace">
               </div>
               <div class="mb-3">
                 <label for="birthDate" class="label">Birth Date</label>
                 <div class="birthdate">
                   <div class="mb-3">
                     <label for="dayBirthDate" class="form-label" style="font-size: 10pt;">Day</label>
-                    <input type="text" class="form-control" id="userdayBirthDate" placeholder="DD">
+                    <input name="dayBirthDate" type="text" class="form-control" id="dayBirthDate" placeholder="DD">
                   </div>
                   <div class="mb-3">
                     <label for="monthBirthDate" class="form-label" style="font-size: 10pt;">Month</label>
-                    <input type="text" class="form-control" id="usermonthBirthDate" placeholder="MM">
+                    <input name="monthBirthDate" type="text" class="form-control" id="monthBirthDate" placeholder="MM">
                   </div>
                   <div class="mb-3">
                     <label for="yearBirthDate" class="form-label"style="font-size: 10pt;" >Year</label>
-                    <input type="text" class="form-control" id="useryearBirthDate" placeholder="YYYY">
+                    <input name="yearBirthDate" type="text" class="form-control" id="yearBirthDate" placeholder="YYYY">
                   </div>
                 </div>
                 <div class="mb-3">
                     <label for="CV" class="form-label">Curriculum Vitae (CV)</label>
-                    <input type="file" class="form-control" id="userCV" placeholder="Add file">
+                    <input name="CV" type="file" class="form-control" id="CV" placeholder="Add file">
                 </div>
                 <div class="mb-3">
-                    <label for="flazzCard" class="form-label">Flazz Card/ID Card</label>
-                    <input type="file" class="form-control" id="userCard" >
+                    <label for="IDCard" class="form-label">Flazz Card/ID Card</label>
+                    <input name="IDCard" type="file" class="form-control" id="IDCard" >
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

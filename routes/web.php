@@ -26,11 +26,14 @@ Route::get('/', [HackatonController::class, 'halamanUtama'])->name('halamanUtama
 
 Auth::routes();
 
+Route::get('/dashboard', [MemberController::class, 'getDashboard'])->name('getDashboard');
+
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::post('/add-member/{id}', [MemberController::class, 'createMember'])->name('createMember');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/dashboard', [MemberController::class, 'getDashboard'])->name('getDashboard');
 
 Route::get('/admin-dashboard', function () {
     return view('admindashboard');
