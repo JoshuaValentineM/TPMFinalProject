@@ -15,14 +15,14 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#"><img src="Assets/LogoTSfull.svg" id="navbar-logo"></a>
+          <a class="navbar-brand" href="{{ route('halamanUtama') }}"><img src="{{ ('img/logoTSfull.svg') }}" id="navbar-logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                <a class="nav-link active" aria-current="page" href="{{ route('getDashboard') }}">Dashboard</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Payment</a>

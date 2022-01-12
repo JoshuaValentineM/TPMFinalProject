@@ -20,7 +20,7 @@ class IsAdminMiddleware
     public function handle(Request $request, Closure $next)
     {
         $user = Auth::user();
-        if ($user->role != 'admin') return redirect('/');
+        if ($user->role != 'admin') return redirect('/dashboard');
         return $next($request);
     }
 }
