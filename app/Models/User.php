@@ -41,12 +41,18 @@ class User extends Authenticatable
         // // 'flazzCard',
         'IDCard',
         'verification',
+        'payment',
 
     ];
 
     public function member()
     {
         return $this->hasMany(Member::class);
+    }
+
+    public function payment()
+    {
+        return $this->hasMany(Payment::class);
     }
 
     /**

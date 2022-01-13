@@ -105,10 +105,16 @@
             <p>Waiting for verification...</p>
 
             <div class="box-container">
-              <img src="{{ ('img/Payment Indicator (Shape).svg') }}" alt="payment-indicator">
+                <img src="{{ ('img/Payment Indicator (Shape).svg') }}" alt="payment-indicator">
             </div>
-            <input type="file" class="form-control file" id="payment-proof" placeholder="Add file">
+            <form action="{{route('createPayment', ['id'=>$teamId])}}" method="POST" enctype="multipart/form-data">
+                @csrf
+            <div>
+            <input type="file" class="form-control file" id="payment" name='payment' placeholder="Add file">
 
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Bukti</button>
+            </form>
             <!-- <div class="box-container">
               <div class="payment-indicator">
                 <div class="payment-proof">
@@ -126,6 +132,10 @@
               </div>
             </div> -->
         </div>
+        <div>
+            <button onclick="window.location.href='{{ route('downloadCV') }}'" type="submit" class="btn btn-primary">Download Bukti</button>
+        </div>
+
 
 
     </section>

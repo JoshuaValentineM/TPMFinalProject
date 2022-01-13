@@ -51,4 +51,18 @@ class AdminController extends Controller
         $teams = User::where('verification', 1)->get();
         return view('adminparticipants', compact('teams'));
     }
+
+    public function downloadCV()
+    {
+        $file = public_path('fileStorageCV/1642091972.jpg');
+        // $filename = $request->user()->payment; <<-- Cara lewat tabel users
+        // $file = storage_path('app/payment-data/' . $filename);
+
+        // $file = storage_path('app/payment-data/temp.jpg');
+
+
+        // return response()->download(public_path('filestorageCV/' . $CV));
+        return response()->download($file);
+        // return response()->download($file);
+    }
 }

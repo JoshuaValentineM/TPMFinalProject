@@ -38,12 +38,15 @@ Route::post('/add-member/{id}', [MemberController::class, 'createMember'])->name
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/payment', function () {
-    return view('payment');
-});
+Route::get('/payment', [MemberController::class, 'getTeamPaymentById'])->name('getTeamPaymentById');
+
 Route::get('/timeline', function () {
     return view('usertimeline');
 });
+
+Route::post('/upload-bukti/{id}', [MemberController::class, 'createPayment'])->name('createPayment');
+
+Route::get('/download', [AdminController::class, 'downloadCV'])->name('downloadCV');
 
 // Route::get('/get-team', [MemberController::class, 'getTeamById'])->name('getTeamById');
 

@@ -38,6 +38,7 @@ class CreateUsersTable extends Migration
             // // // $table->string('flazzCard');
             $table->string('IDCard');
             $table->integer('verification')->default(0);
+            $table->string('payment')->nullable();
         });
     }
 

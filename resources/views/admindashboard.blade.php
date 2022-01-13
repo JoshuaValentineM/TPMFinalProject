@@ -43,11 +43,12 @@
                   <div class="toggleswitch">
                     Verified &nbsp
                     <label class="switch">
-                      {{-- <input type="checkbox">
-                      <span href="{{route('verifiedTeamList')}}" class="slider round"></span> --}}
-                      <a href="{{ route('verifiedTeamParticipantList') }}">
+                        <a href="{{ route('verifiedTeamParticipantList') }}">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                      {{-- <a href="{{ route('verifiedTeamParticipantList') }}">
                         <i class="icon-dashboard"></i>
-                        <span class="slider round"> </span>
+                        <span class="slider round"> </span> --}}
                     </a>
                     </label>
                   </div>
@@ -79,7 +80,7 @@
                   <th scope="row"><i class="fas fa- dash-icon"></i></th>
                   @endif
                   <td>{{ $team->username}}</td>
-                  <td>Rp 7200.000,-</td>
+                  <td>Rp 7.200.000,-</td>
                   <td><button>View</button></td>
                   <td><form action="{{route('verifyTeam', ['id'=>$team->id])}}" method="post">
                     @csrf
