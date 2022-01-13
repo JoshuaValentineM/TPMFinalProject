@@ -37,6 +37,7 @@ class CreateUsersTable extends Migration
             $table->string('CV');
             // // // $table->string('flazzCard');
             $table->string('IDCard');
+            $table->integer('verification')->default(0);
         });
     }
 

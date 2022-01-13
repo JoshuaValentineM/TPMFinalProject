@@ -1,12 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Reem Kufi', sans-serif;
+}
+
+#adminlogologin {
+    filter: invert(100%);
 }
 
 .loginPage {
     display: flex;
     position: relative;
+}
+
+.logo {
+    filter: invert(100%);
 }
 
 .headLoginPage {
@@ -20,11 +31,16 @@
 }
 
 .leftLoginPage {
-    background-color: rgb(218, 218, 218);
+    background-color: rgb(10, 14, 47);
     position: fixed;
     height: 100%;
     width: 550px;
     padding: 50px;
+}
+
+.leftLoginPage>h2 {
+    padding-top: 30px;
+    color: white;
 }
 
 .rightLoginPage {
@@ -34,7 +50,8 @@
 }
 
 .loginForm h3 {
-    padding-top: 110px;
+    padding-top: 80px;
+    font-weight: bold;
 }
 
 form>div {
@@ -45,6 +62,39 @@ label {
     font-weight: 500;
 }
 
+.passwordLabel {
+    display: flex;
+    justify-content: space-between;
+
+}
+
 button {
     width: 200px;
+}
+
+.btn {
+    background-color: #9152FE;
+    color: #fff;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #9152FE;
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset;
+}
+
+.btn-primary {
+    background-color: rgb(145, 82, 254);
+    border-color: rgb(145, 82, 254);
+}
+
+.btn-primary :visited {
+    background-color: rgb(145, 82, 254);
+    border-color: rgb(145, 82, 254);
+}
+
+.form-control {
+    background-color: rgb(196, 196, 196);
 }

@@ -96,7 +96,7 @@
     <section class="loginPage">
       <div class="leftLoginPage">
         <div>
-            <img src="{{ ('img/LogoTSfull.svg') }}" >
+            <a href="{{ route('halamanUtama') }}"><img src="{{ ('img/LogoTSfull.svg') }}" ></a>
         </div>
         <h2>[tagline]</h2>
 
@@ -105,9 +105,10 @@
       <div class="rightLoginPage">
         <div class="headLoginPage">
             <div style="color: rgb(161, 161, 161) ;">Not registered?</div>
-            <a class="btn btn-link" href="{{ route('register') }}">
+            {{-- <a class="btn btn-link" href="{{ route('register') }}">
                 {{ __('Register') }}
-            </a>
+            </a> --}}
+            <button onclick="window.location.href='{{ route('register') }}'" class="btn btn-secondary rounded-pill" type="submit">Register</button>
         </div>
 
         <div class="loginForm">

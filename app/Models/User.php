@@ -40,6 +40,7 @@ class User extends Authenticatable
         'CV',
         // // 'flazzCard',
         'IDCard',
+        'verification',
 
     ];
 

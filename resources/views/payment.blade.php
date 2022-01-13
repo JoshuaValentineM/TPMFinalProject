@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{asset('css/stylepayment.css')}}">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset('css/navbar.css')}}">
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
@@ -29,7 +30,9 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{ '/timeline' }}">Timeline</a>
               </li>
-              <button class="btn btn-outline-success" type="submit">Logout</button>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{ route('logout') }}">Logout</a>
+              </li>
             </ul>
           </div>
           </div>
@@ -39,7 +42,10 @@
 
     <section id="payment" >
         <h2>Registration Period</h2>
-        <h1>Opens in 12 days, 5 hours, 4 minutes</h1>
+        <div class="none-and-gradient">
+            <h1>Opens in</h1>
+            <h1 class="gradient-font">12 days, 5 hours, 4 minutes</h1>
+          </div>
 
         <div class="box-container">
           <div class="payment-container">
@@ -49,33 +55,47 @@
             <div class="box-container">
               <div class="earlyBird-container">
                 <h4>7 days 0 hours left</h4>
-                <p>Rp 720.000,-</p>
+                <div class="price">
+                    <p class="rp">Rp</p>
+                    <p class="nominal">720.000,-</p>
+                  </div>
               </div>
             </div>
 
             <div class="box-container">
               <div class="normalPrice-container">
                 <div class="binusian-price">
-                    <h4>Binusian</h4>
-                    <p>Rp 960.000,-</p>
+                    <h4 class="gradient-font">Binusian</h4>
+                    <div class="gradient-font">
+                      <div class="price">
+                        <p class="rp">Rp</p>
+                        <p class="nominal">960.000,-</p>
+                      </div>
+
+                    </div>
                 </div>
                 <div class="nonBinusian-price">
                     <h4>Non-Binusian</h4>
-                    <p>Rp 1.200.000,-</p>
+                    <div class="price">
+                        <p class="rp">Rp</p>
+                        <p class="nominal">1.200.000,-</p>
+                      </div>
                 </div>
               </div>
             </div>
 
-            <div class="rekeningTransfer">
+            <div class="box-container">
+                <div class="rekeningTransfer">
                 <div class="rekeningTujuan">
                    <p>via Bank Transfer to</p>
-                    <p>XXX-XXX-XXXX</p>
+                   <p class="norek">XXX-XXX-XXXX</p>
                     <p>BCA</p>
                     <p>a.n. Andi Budi</p>
                 </div>
                 <div class="qrCode">
-                    <div>qr</div>
+                    <img src="{{ ('img/Barcode.svg') }}" alt="barcode">
                 </div>
+            </div>
             </div>
           </div>
         </div>

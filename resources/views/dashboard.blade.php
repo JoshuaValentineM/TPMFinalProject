@@ -10,9 +10,10 @@
   <link rel="stylesheet" href="{{asset('css/userdashboard.css')}}">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{asset('css/navbar.css')}}">
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
         <div class="container-fluid">
           <a class="navbar-brand" href="{{ route('halamanUtama') }}"><img src="{{ ('img/logoTSfull.svg') }}" id="navbar-logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +30,9 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{ '/timeline' }}">Timeline</a>
               </li>
-              <button onclick="window.location.href='{{ route('logout') }}'" class="btn btn-outline-success" type="submit">Logout</button>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{ route('logout') }}">Logout</a>
+              </li>
             </ul>
           </div>
           </div>

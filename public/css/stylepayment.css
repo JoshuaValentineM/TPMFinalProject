@@ -49,10 +49,6 @@ h4 {
     justify-content: center;
 }
 
-p {
-    display: flex;
-    justify-content: center;
-}
 
 .payment-container>h4 {
     padding-top: 50px;
@@ -76,7 +72,7 @@ p {
 .earlyBird-container {
     background-color: white;
     border: 6px solid rgb(196, 196, 196);
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     padding: 5%;
@@ -87,7 +83,7 @@ p {
 .normalPrice-container {
     background-color: white;
     border: 6px solid rgb(196, 196, 196);
-    width: 70%;
+    width: 90%;
     display: flex;
     justify-content: space-between;
     padding: 5%;
@@ -104,7 +100,7 @@ p {
 .rekeningTransfer {
     display: flex;
     justify-content: space-between;
-    width: 60%;
+    width: 90%;
     padding: 5%;
     margin: 5%;
 }
@@ -124,10 +120,59 @@ p {
     margin-left: 26%;
     margin-top: 20px;
     margin-bottom: 100px;
-    background-image: url(/Assets/Add\ File\ Button.svg);
-    background-size: cover;
+    /* background-image: url(/Assets/Add\ File\ Button.svg);
+    background-size: cover; */
     width: 149px;
     height: 64px;
     overflow: hidden;
 
+}
+
+.none-and-gradient {
+    display: flex;
+    justify-content: center;
+}
+
+.none-and-gradient>h1 {
+    padding: 5px;
+}
+
+.gradient-font {
+    background: -webkit-linear-gradient(#FB4FFF, #9152FE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+
+.price {
+    display: flex;
+    justify-content: center;
+    align-content: flex-end;
+}
+
+.price>p {
+    padding: 3px;
+}
+
+.rp {
+    font-size: 24px;
+    margin-top: 25px;
+
+}
+
+.nominal {
+    font-size: 48px;
+}
+
+.rekeningTujuan {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.norek {
+    font-size: 43px;
+}
+
+.paymentVerification>p {
+    display: flex;
+    justify-content: center;
 }

@@ -22,10 +22,24 @@ nav {
     border: none;
 }
 
+.btn:hover {
+    background-color: #9152FE;
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset;
+}
+
 .grad {
     background-image: linear-gradient(to right, #FB4FFF, #9152FE);
     color: #fff;
     border: none;
+}
+
+.grad:hover {
+    background-image: linear-gradient(to right, #FB4FFF, #9152FE);
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset;
 }
 
 .nav-item {

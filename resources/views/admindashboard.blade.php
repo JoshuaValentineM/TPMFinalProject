@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
         <div class="container-fluid">
           <a class="navbar-brand" href="{{ route('halamanUtama') }}"><img src="{{ ('img/LogoTSfull.svg') }}" id="navbar-logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,27 +19,36 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ ('/admin-dashboard') }}">Dashboard</a>
+                <a class="nav-link active" aria-current="page" href="{{ route('getAdminDashboard') }}">Dashboard</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ ('/admin-participants') }}">Participants</a>
+                <a class="nav-link active" aria-current="page" href="{{ route('getAdminParticipant') }}">Participants</a>
               </li>
-              <button onclick="window.location.href='{{ route('logout') }}'" class="btn btn-outline-success" type="submit">Logout</button>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{ route('logout') }}">Logout</a>
+              </li>
             </ul>
           </div>
           </div>
     </nav>
     <section id="admin-dashboard">
+        <div class=middle-admin>
         <h2>Payment Confirmation</h2>
         <div id="dashboard-container">
             <div class="dashboard-tools">
-                <form id="dashboard-tools">
-                  <input class="form-control me-2 search-length" type="search" placeholder="Search" aria-label="Search">
+                <form id="dashboard-tools" type="get" action="{{route('searchTeam')}}">
+                  <input class="form-control me-2 search-length" name="query" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+
                   <div class="toggleswitch">
                     Verified &nbsp
                     <label class="switch">
-                      <input type="checkbox">
-                      <span class="slider round"></span>
+                      {{-- <input type="checkbox">
+                      <span href="{{route('verifiedTeamList')}}" class="slider round"></span> --}}
+                      <a href="{{ route('verifiedTeamParticipantList') }}">
+                        <i class="icon-dashboard"></i>
+                        <span class="slider round"> </span>
+                    </a>
                     </label>
                   </div>
                   <select class="form-select sort-button" aria-label="Default select example">
@@ -64,12 +73,23 @@
               <tbody>
                 @foreach ($teams as $team )
                 <tr>
-                  <th scope="column"><i class="fas fa-check-circle"></i></th>
+                    @if ($team->verification===1)
+                  <th scope="row"><i class="fas fa-check-circle"></i></th>
+                    @else
+                  <th scope="row"><i class="fas fa- dash-icon"></i></th>
+                  @endif
                   <td>{{ $team->username}}</td>
                   <td>Rp 7200.000,-</td>
                   <td><button>View</button></td>
-                  <td><button>Verify</button></td>
+                  <td><form action="{{route('verifyTeam', ['id'=>$team->id])}}" method="post">
+                    @csrf
+                    @method('PATCH')
+                    <button type="submit" class="btn btn-primary">Verify</button>
+                </form></td>
                   @endforeach
+
+
+
                 </tr>
                 {{-- <tr>
                   <th scope="row"><i class="fas fa-circle"></i></th>
@@ -88,6 +108,8 @@
               </tbody>
             </table>
         </div>
+    </div>
+    </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

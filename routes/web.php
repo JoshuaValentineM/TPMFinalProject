@@ -49,13 +49,15 @@ Route::get('/timeline', function () {
 
 
 Route::group(['middleware' => IsAdminMiddleware::class], function () {
-    Route::get('/admin-dashboard', function () {
-        return view('admindashboard');
-    });
-
     Route::get('/admin-dashboard', [AdminController::class, 'getAdminDashboard'])->name('getAdminDashboard');
 
-    Route::get('/admin-participants', function () {
-        return view('adminparticipants');
-    });
+    Route::get('/admin-participant', [AdminController::class, 'getAdminParticipant'])->name('getAdminParticipant');
+
+    Route::get('/search-team', [AdminController::class, 'searchTeam'])->name('searchTeam');
+
+    Route::get('/verified-team', [AdminController::class, 'verifiedTeamList'])->name('verifiedTeamList');
+    Route::get('/verified-team-participant', [AdminController::class, 'verifiedTeamParticipantList'])->name('verifiedTeamParticipantList');
+
+    Route::patch('/verify-team/{id}', [AdminController::class, 'verifyTeam'])->name('verifyTeam');
+    Route::patch('/verify-team-participant/{id}', [AdminController::class, 'verifyTeamParticipant'])->name('verifyTeamParticipant');
 });
