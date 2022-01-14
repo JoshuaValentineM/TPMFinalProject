@@ -347,7 +347,7 @@
           </div>
         </div>
         <div class="contact-form round-corners">
-          <form action="https://formspree.io/f/mbjwdjdr" method="POST" id="contact-us-form">
+          <form action="https://formspree.io/f/mbjwdjdr" method="POST" id="my-form">
             <div class="mb-3">
               <label for="contactname" class="form-label">Your Name</label>
               <input type="text" name="name" class="form-control" id="contactname" placeholder="Enter your name" required>
@@ -364,10 +364,10 @@
               <label for="contactmessage" class="form-label">Message</label>
               <textarea name="message" class="form-control" id="contactmessage" rows="3"  placeholder="Enter your message" required></textarea>
             </div>
-            <button type="submit" id="my-form-button" class="rounded-pill btn grad">Send Message</button>
             <p id="my-form-status"></p>
+            <button onclick="buatContactUs()" type="submit" id="my-form-button" class="rounded-pill btn grad">Send Message</button>
           </form>
-          <script>
+          {{-- <script>
             var form = document.getElementById("my-form");
 
             async function handleSubmit(event) {
@@ -388,7 +388,7 @@
               });
             }
             form.addEventListener("submit", handleSubmit)
-        </script>
+        </script> --}}
         </div>
       </div>
 

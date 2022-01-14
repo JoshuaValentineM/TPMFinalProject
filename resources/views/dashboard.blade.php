@@ -57,10 +57,10 @@
                 </tr>
                 @endforeach
             </tbody>
-            <div>
+            {{-- <div>
 
             </div>
-            <button class="btn btn-outline-success" type="submit">Add member</button>
+            <button class="btn btn-outline-success" type="submit">Add member</button> --}}
         </div>
         <hr>
         <div id="user-information">
@@ -115,7 +115,7 @@
                     <label for="IDCard" class="form-label">Flazz Card/ID Card</label>
                     <input name="IDCard" type="file" class="form-control" id="IDCard" >
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Add member</button>
             </form>
         </div>
       </div>
