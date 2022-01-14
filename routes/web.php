@@ -34,7 +34,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Route::post('/register', [RegisterController::class, 'create'])->name('register');
 
-Route::post('/add-member/{id}', [MemberController::class, 'createMember'])->name('createMember');
+Route::post('/add-member/{id}/{memberNumber}', [MemberController::class, 'createMember'])->name('createMember');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

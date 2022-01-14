@@ -23,6 +23,8 @@ class Member extends Model
         // 'flazzCard',
         'IDCard',
         'teamId',
+        'memberNumber',
+
     ];
 
     public function user()

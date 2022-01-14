@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset('css/navbar.css')}}">
+    <link rel="icon" href="{{ ('img/favicon-32x32.png') }}" type="image/gif">
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
@@ -115,22 +116,22 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit Bukti</button>
             </form>
-            <!-- <div class="box-container">
+             {{-- <div class="box-container">
               <div class="payment-indicator">
                 <div class="payment-proof">
-                  <img src="./Assets/Status (Finished - Checklist).svg" alt="finished">
+                  <img src="{{ ('img/Status (Finished - Checklist).svg') }}" alt="finished">
                   <p>Upload Proof of Payment</p>
                 </div>
                 <div class="status-verification">
-                  <img src="./Assets/Status (Pending - Clock).svg" alt="pending">
+                  <img src="{{ ('img/Status (Pending - Clock).svg') }}" alt="pending">
                   <p>Verification</p>
                 </div>
                 <div class="payment-ready">
-                  <img src="./Assets/Status (Pending - Dotted Circle).svg" alt="pending dotted">
+                  <img src="{{ ('img/Status (Pending - Dotted Circle).svg') }}" alt="pending dotted">
                   <p>You're ready to go!</p>
                 </div>
               </div>
-            </div> -->
+            </div> --}}
         </div>
         <div>
             <button onclick="window.location.href='{{ route('downloadCV') }}'" type="submit" class="btn btn-primary">Download Bukti</button>

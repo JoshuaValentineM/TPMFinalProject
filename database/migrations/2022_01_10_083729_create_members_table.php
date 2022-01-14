@@ -32,6 +32,7 @@ class CreateMembersTable extends Migration
             $table->string('CV');
             // $table->string('flazzCard');
             $table->string('IDCard');
+            $table->integer('memberNumber');
             $table->timestamps();
         });
     }

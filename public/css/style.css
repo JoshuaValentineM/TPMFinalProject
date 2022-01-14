@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&family=Prompt:wght@400;600&display=swap');
 
 * {
+    margin: 0px;
+    padding: 0;
     font-family: reem kufi;
 }
 
@@ -52,18 +55,28 @@ body {
 
 p {
     color: #fff;
+    /* font-family: Prompt; */
+    font-weight: 400;
 }
 
 h1 {
     color: #fff;
+    /* font-family: Inconsolata; */
+    font-weight: bold;
+    letter-spacing: 5px;
 }
 
 h2 {
     color: #fff;
+    /* font-family: Inconsolata; */
+    font-weight: bold;
+    letter-spacing: 3px;
 }
 
 h3 {
     color: #fff;
+    /* font-family: Prompt; */
+    font-weight: 600;
 }
 
 .main-title {
@@ -71,7 +84,7 @@ h3 {
 }
 
 .round-corners {
-    border-radius: 5%;
+    border-radius: 20px;
 }
 
 iframe {
@@ -84,16 +97,21 @@ a {
 
 /* home */
 #home-section {
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    padding-left: 10%;
+}
+
+.hometext {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 10%;
 }
 
 /* about */
 #about-section {
-    min-height: 90vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
 }
@@ -128,6 +146,10 @@ a {
     display: flex;
     width: 100%;
     justify-content: space-around;
+}
+
+#prizes>div>img {
+    width: 25%;
 }
 
 .prize-container {
@@ -215,8 +237,13 @@ a {
 
 .actgroupwhy {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
+}
+
+.why-participate-assets {
+    width: 65%;
 }
 
 /* timeline */
@@ -249,10 +276,6 @@ a {
     min-height: 100vh;
 }
 
-.mentor-jury-title {
-    position: absolute;
-    left: 5%;
-}
 
 /* togleswitch */
 .toggle-mentor-jury {
@@ -367,7 +390,12 @@ a {
 .actgroupmentor {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     flex-direction: column;
+}
+
+.mentor-sizing {
+    width: 65%;
 }
 
 /* jury */
@@ -377,6 +405,10 @@ a {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+}
+
+.mentor-jury-title {
+    margin-top: 20px;
 }
 
 .jury-carousel-segment {
@@ -412,6 +444,7 @@ a {
 .actgroupjury {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     flex-direction: column;
 }
 
@@ -444,12 +477,27 @@ Other events */
 
 .events {
     display: flex;
-    width: 45%;
+    width: 400px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 400px;
     background-color: grey;
+}
+
+.round-corners-event {
+    border-radius: 50px;
+}
+
+#virtualconference {
+    background-image: url(/Assets/OtherEvents/Virtual\ Conference\ -\ Shaped.svg);
+    background-position: center center;
+    background-size: cover;
+}
+
+#developerworkshop {
+    background-image: url(/Assets/OtherEvents/Developer\ Workshop\ -\ Shaped.svg);
+    background-size: cover;
 }
 
 /* sponsors */

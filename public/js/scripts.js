@@ -43,23 +43,17 @@ function showDesign() {
     document.getElementById("design-mentor1").style.display = "flex";
     document.getElementById("technology-mentor1").style.display = "none";
     document.getElementById("business-mentor1").style.display = "none";
-    document.getElementById("design-mentor1-cap").style.display = "flex";
-    document.getElementById("technology-mentor1-cap").style.display = "none";
-    document.getElementById("business-mentor1-cap").style.display = "none";
+
 
     document.getElementById("design-mentor2").style.display = "flex";
     document.getElementById("technology-mentor2").style.display = "none";
     document.getElementById("business-mentor2").style.display = "none";
-    document.getElementById("design-mentor2-cap").style.display = "flex";
-    document.getElementById("technology-mentor2-cap").style.display = "none";
-    document.getElementById("business-mentor2-cap").style.display = "none";
+
 
     document.getElementById("design-mentor3").style.display = "flex";
     document.getElementById("technology-mentor3").style.display = "none";
     document.getElementById("business-mentor3").style.display = "none";
-    document.getElementById("design-mentor3-cap").style.display = "flex";
-    document.getElementById("technology-mentor3-cap").style.display = "none";
-    document.getElementById("business-mentor3-cap").style.display = "none";
+
 }
 
 function showTechnology() {
@@ -70,23 +64,17 @@ function showTechnology() {
     document.getElementById("design-mentor1").style.display = "none";
     document.getElementById("technology-mentor1").style.display = "flex";
     document.getElementById("business-mentor1").style.display = "none";
-    document.getElementById("design-mentor1-cap").style.display = "none";
-    document.getElementById("technology-mentor1-cap").style.display = "flex";
-    document.getElementById("business-mentor1-cap").style.display = "none";
+
 
     document.getElementById("design-mentor2").style.display = "none";
     document.getElementById("technology-mentor2").style.display = "flex";
     document.getElementById("business-mentor2").style.display = "none";
-    document.getElementById("design-mentor2-cap").style.display = "none";
-    document.getElementById("technology-mentor2-cap").style.display = "flex";
-    document.getElementById("business-mentor2-cap").style.display = "none";
+
 
     document.getElementById("design-mentor3").style.display = "none";
     document.getElementById("technology-mentor3").style.display = "flex";
     document.getElementById("business-mentor3").style.display = "none";
-    document.getElementById("design-mentor3-cap").style.display = "none";
-    document.getElementById("technology-mentor3-cap").style.display = "flex";
-    document.getElementById("business-mentor3-cap").style.display = "none";
+
 }
 function showBusiness() {
     document.getElementById("Business").style.opacity = 1;
@@ -96,23 +84,16 @@ function showBusiness() {
     document.getElementById("design-mentor2").style.display = "none";
     document.getElementById("technology-mentor2").style.display = "none";
     document.getElementById("business-mentor2").style.display = "flex";
-    document.getElementById("design-mentor2-cap").style.display = "none";
-    document.getElementById("technology-mentor2-cap").style.display = "none";
-    document.getElementById("business-mentor2-cap").style.display = "flex";
+
 
     document.getElementById("design-mentor3").style.display = "none";
     document.getElementById("technology-mentor3").style.display = "none";
     document.getElementById("business-mentor3").style.display = "flex";
-    document.getElementById("design-mentor3-cap").style.display = "none";
-    document.getElementById("technology-mentor3-cap").style.display = "none";
-    document.getElementById("business-mentor3-cap").style.display = "flex";
 
     document.getElementById("design-mentor1").style.display = "none";
     document.getElementById("technology-mentor1").style.display = "none";
     document.getElementById("business-mentor1").style.display = "flex";
-    document.getElementById("design-mentor1-cap").style.display = "none";
-    document.getElementById("technology-mentor1-cap").style.display = "none";
-    document.getElementById("business-mentor1-cap").style.display = "flex";
+
 }
 
 // mentor carousel

@@ -19,18 +19,8 @@ class MemberController extends Controller
     //     return view('dashboard');
     // }
 
-    public function getDashboard(Request $request)
-    {
-        $teamId = $request->user()->id;
-        $members = DB::table('members')->where('teamId', $teamId)->get()->toArray();
-        // $leader = $request->user()->fullName;
-        $leaders = DB::table('users')->where('id', $teamId)->get()->toArray();
-        // dd($leaders);
-        // $members = Member::all();
-        return view('dashboard', ['teamId' => $teamId, 'members' => $members], ['leaders' => $leaders]);
-    }
 
-    public function createMember(MemberRequest $request, $id)
+    public function createMember(MemberRequest $request, $id, $memberNumber)
     {
         $CV = $request->CV;
         $CVName = time() . '.' . $CV->getClientOriginalExtension();
@@ -58,11 +48,27 @@ class MemberController extends Controller
             // 'flazzCard' => $request['flazzCard'],
             'IDCard' => $IDCard,
             'teamId' => $id,
+            'memberNumber' => $memberNumber,
         ]);
 
         // return view('dashboard', ['teamId' => $teamId]);
         // return view('dashboard', ['teamId' => $teamId], ['members' => $members]);
         return redirect(route('getDashboard'));
+    }
+
+    public function getDashboard(Request $request)
+    {
+        $teamId = $request->user()->id;
+        $members = DB::table('members')->where('teamId', $teamId)->get()->toArray();
+        // $leader = $request->user()->fullName;
+        $leaders = DB::table('users')->where('id', $teamId)->get()->toArray();
+        $membernomor1 = DB::table('members')->where('teamId', $teamId)->where('memberNumber', 1)->get()->toArray();
+        $membernomor2 = DB::table('members')->where('teamId', $teamId)->where('memberNumber', 2)->get()->toArray();
+        $membernomor3 = DB::table('members')->where('teamId', $teamId)->where('memberNumber', 3)->get()->toArray();
+        // dd($leaders);
+        // dd($membernomor1);
+        // $members = Member::all();
+        return view('dashboard', ['teamId' => $teamId, 'members' => $members], ['leaders' => $leaders], ['membernomor1' => $membernomor1, 'membernomor2' => $membernomor2, 'membernomor3' => $membernomor3,]);
     }
 
     public function getTeamPaymentById(Request $request)

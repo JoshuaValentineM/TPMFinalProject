@@ -32,7 +32,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="icon" href="{{ ('img/favicon-32x32.png') }}" type="image/gif">
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
@@ -71,8 +71,13 @@
           </div>
     </nav>
     <section class="container-fluid" id="home-section">
-        <h1>HACKATHON 5.0</h1>
+        <div class="hometext">
+            <h1>>HACKATHON 5.0_</h1>
         <h3>[Tagline]</h3>
+    </div>
+    <div>
+      <img src="{{ ('img/temp.jpg') }}">
+    </div>
     </section>
     <section class="container-fluid" id="about-section">
       <div class="container-fluid" id="about-container">
@@ -80,7 +85,7 @@
           <iframe class="round-corners" src="https://drive.google.com/file/d/1Hy-lQHIp9Qb8rQ0jrnaj0aPMBkVAnHm3/preview" width="640" height="360" allow="autoplay"></iframe>
         </div>
         <div class="about-text-btn">
-          <h1>About Hackathon 5.0</h1>
+            <h1>About<br> Hackathon 5.0_</h1>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores accusantium illum alias quasi laudantium dolorum culpa repellat illo assumenda, eius vero suscipit est reiciendis pariatur, aut perferendis quia aperiam quo!</p>
           <div class="about-btn">
             <button onclick="window.location.href='{{ route('register') }}'" class="btn btn-outline-success rounded-pill" type="submit">Register NOW!</button>
@@ -93,9 +98,9 @@
     <section class="container-fluid" id="prizes">
       <h1 class="main-title">Prizes</h1>
       <div>
-        <div class="prize-container round-corners"></div>
-        <div class="prize-container round-corners"></div>
-        <div class="prize-container round-corners"></div>
+        <img src="{{ ('img/1st Place.svg') }}">
+        <img src="{{ ('img/2nd Place.svg') }}">
+        <img src="{{ ('img/3rd Place.svg') }}">
       </div>
     </section>
     <section class="container-fluid" id="why-participate">
@@ -103,16 +108,19 @@
       <div class="slideshowcontainer">
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
       <div class="actgroupwhy fadewhy">
-        <img src="{{ ('img/temp.jpg') }}" class="round-corners">
-            <p class="imgcap">reason 1</p>
+        <img src="{{ ('img/WYSP - 1.svg') }}" class="round-corners why-participate-assets">
       </div>
       <div class="actgroupwhy fadewhy">
-        <img src="{{ ('img/temp.jpg') }}" class="round-corners">
-            <p class="imgcap">reason 2</p>
+            <img src="{{ ('img/WYSP - 2.svg') }}" class="round-corners why-participate-assets">
       </div>
       <div class="actgroupwhy fadewhy">
-        <img src="{{ ('img/temp.jpg') }}" class="round-corners">
-            <p class="imgcap">reason 3</p>
+            <img src="{{ ('img/WYSP - 3.svg') }}" class="round-corners why-participate-assets">
+      </div>
+      <div class="actgroupwhy fadewhy">
+        <img src="{{ ('img/WYSP - 4.svg') }}" class="round-corners why-participate-assets">
+      </div>
+      <div class="actgroupwhy fadewhy">
+        <img src="{{ ('img/WYSP - 5.svg') }}" class="round-corners why-participate-assets">
       </div>
       <a class="next" onclick="plusSlides(1)">&#10095;</a>
       </div>
@@ -127,43 +135,35 @@
       <div class="timeline-container">
         <img src="{{ ('img/Open Reg.svg') }}" class="timeline-part">
         <img src="{{ ('img/Close Reg.svg') }}" class="timeline-part">
-        <a href="#"><img src="{{ ('img/TechMeet.svg') }}" class="timeline-part"></a>
-        <a href="#"><img src="{{ ('img/Comp Day.svg') }}"  class="timeline-part"></a>
+        <a href="https://zoom.us/"><img src="{{ ('img/TechMeet.svg') }}" class="timeline-part"></a>
+        <a href="https://zoom.us/"><img src="{{ ('img/Comp Day.svg') }}"  class="timeline-part"></a>
       </div>
     </timeline>
     <section class="container-fluid" id="mentor">
+        <h1 class="mentor-jury-title">>Our Mentor_</h1>
       <div class="toggle-mentor-jury">
         <a onclick="showDesign()" id="Design" class="mentor-jury-selector mentor-jury-selector-active"><h3>Design</h3></a>
         <a onclick="showTechnology()" id="Technology" class="mentor-jury-selector"><h3>Technology</h3></a>
         <a onclick="showBusiness()" id="Business" class="mentor-jury-selector"><h3>Business</h3></a>
       </div>
       <div class="mentor-carousel-segment">
-        <div><h1 class="mentor-jury-title">Our Mentor</h1></div>
+
         <div>
             <div class="slideshowcontainermentor">
             <div class="actgroupmentor fadewhy">
-                  <img src="{{ ('img/temp.jpg') }}" class="round-corners" id="design-mentor1">
-                  <img src="{{ ('img/temp.jpg') }}" class="round-corners" id="technology-mentor1">
-                  <img src="{{ ('img/temp.jpg') }}" class="round-corners" id="business-mentor1">
-                  <p class="imgcap" id="design-mentor1-cap">design 1</p>
-                  <p class="imgcap" id="technology-mentor1-cap">technology 1</p>
-                  <p class="imgcap" id="business-mentor1-cap">business 1</p>
+                <img src="{{ ('img/Design1.svg') }}" class="round-corners mentor-sizing" id="design-mentor1">
+                <img src="{{ ('img/Tech1.svg') }}" class="round-corners mentor-sizing" id="technology-mentor1">
+                <img src="{{ ('img/Business1.svg') }}" class="round-corners mentor-sizing"  id="business-mentor1">
             </div>
             <div class="actgroupmentor fadewhy">
-              <img src="{{ ('img/temp.jpg') }}" class="round-corners" id="design-mentor2">
-              <img src="{{ ('img/temp.jpg') }}" class="round-corners" id="technology-mentor2">
-              <img src="{{ ('img/temp.jpg') }}" class="round-corners" id="business-mentor2">
-              <p class="imgcap" id="design-mentor2-cap">design 2</p>
-              <p class="imgcap" id="technology-mentor2-cap">technology 2</p>
-              <p class="imgcap" id="business-mentor2-cap">business 2</p>
+                <img src="{{ ('img/Design2.svg') }}" class="round-corners mentor-sizing" id="design-mentor1">
+                <img src="{{ ('img/Tech2.svg') }}" class="round-corners mentor-sizing" id="technology-mentor1">
+                <img src="{{ ('img/Business2.svg') }}" class="round-corners mentor-sizing"  id="business-mentor1">
             </div>
             <div class="actgroupmentor fadewhy">
-              <img src="{{ ('img/temp.jpg') }}" class="round-corners" id="design-mentor3">
-              <img src="{{ ('img/temp.jpg') }}" class="round-corners" id="technology-mentor3">
-              <img src="{{ ('img/temp.jpg') }}" class="round-corners" id="business-mentor3">
-              <p class="imgcap" id="design-mentor3-cap">design 3</p>
-              <p class="imgcap" id="technology-mentor3-cap">technology 3</p>
-              <p class="imgcap" id="business-mentor3-cap">business 3</p>
+                <img src="{{ ('img/Design3.svg') }}" class="round-corners mentor-sizing" id="design-mentor1">
+                <img src="{{ ('img/Tech3.svg') }}" class="round-corners mentor-sizing" id="technology-mentor1">
+                <img src="{{ ('img/Business3.svg') }}" class="round-corners mentor-sizing"  id="business-mentor1">
             </div>
             </div>
             <div class="slideshow-controls">
@@ -179,21 +179,19 @@
       </div>
     </section>
     <section class="container-fluid" id="jury">
+        <h1 class="mentor-jury-title main-title ">>Our Jury_</h1>
         <div class="jury-carousel-segment">
-            <div><h1 class="mentor-jury-title">Our Jury</h1></div>
+
             <div>
                 <div class="slideshowcontainerjury">
                 <div class="actgroupjury fadewhy">
-                      <img src="{{ ('img/temp.jpg') }}" class="round-corners">
-                      <p class="imgcap">jury 1</p>
+                    <img src="{{ ('img/Jury1.svg') }}" class="round-corners mentor-sizing">
                 </div>
                 <div class="actgroupjury fadewhy">
-                  <img src="{{ ('img/temp.jpg') }}" class="round-corners">
-                  <p class="imgcap">jury 2</p>
+                    <img src="{{ ('img/Jury2.svg') }}" class="round-corners mentor-sizing">
                 </div>
                 <div class="actgroupjury fadewhy">
-                  <img src="{{ ('img/temp.jpg') }}" class="round-corners">
-                  <p class="imgcap">jury 3</p>
+                    <img src="{{ ('img/Jury3.svg') }}" class="round-corners mentor-sizing">
                 </div>
                 </div>
                 <div class="slideshow-controls">
@@ -286,39 +284,37 @@
       </div>
     </section>
     <section class="container-fluid" id="other-event">
-      <h1>Other Event</h1>
+        <h1 class="main-title">Other Event</h1>
       <div class="event-container">
-        <div class="events round-corners" id="virtualconference">
+        <div class="events round-corners-event" id="virtualconference">
+            <img src="{{ ('img/Virtual Conference - Shaped.svg') }}" class="events round-corners-event">
           <h2>Virtual Conference</h2>
-          <button class="rounded-pill btn grad">Find out More</button>
+          <button onclick="window.location.href='https://technoscape.id/virtual-conference'" class="rounded-pill btn grad">Find out More</button>
         </div>
-        <div class="events round-corners" id="developerworkshop">
+        <div class="events round-corners-event" id="developerworkshop">
+            <img src="{{ ('img/Developer Workshop - Shaped.svg') }}" class="events round-corners-event">
           <h2>Developer Workshop</h2>
-          <button class="rounded-pill btn grad">Find out More</button>
+          <button onclick="window.location.href='https://technoscape.id/developer-workshop'" class="rounded-pill btn grad">Find out More</button>
         </div>
       </div>
     </section>
     <section class="container-fluid" id="sponsors">
       <h1 class="main-title">Sponsors</h1>
-      <div class="platinum-sponsor round-corners"></div>
+      <img src="{{ ('img/Gojek.svg') }}" class="platinum-sponsor round-corners">
       <div class="gold-sponsor-container">
-        <div class="gold-sponsor round-corners"></div>
-        <div class="gold-sponsor round-corners"></div>
-        <div class="gold-sponsor round-corners"></div>
+        <img src="{{ ('img/dicoding.svg') }}" class="gold-sponsor round-corners">
+        <img src="{{ ('img/Dewaweb.svg') }}" class="gold-sponsor round-corners">
+        <img src="{{ ('img/Geforce RTX.svg') }}" class="gold-sponsor round-corners">
       </div>
       <div class="silver-sponsor-container">
-        <div class="silver-sponsor round-corners"></div>
-        <div class="silver-sponsor round-corners"></div>
-        <div class="silver-sponsor round-corners"></div>
-        <div class="silver-sponsor round-corners"></div>
-        <div class="silver-sponsor round-corners"></div>
+        <img src="{{ ('img/Sirclo.svg') }}" class="silver-sponsor round-corners">
+        <img src="{{ ('img/Investree.svg') }}" class="silver-sponsor round-corners">
+        <img src="{{ ('img/Bahaso.svg') }}" class="silver-sponsor round-corners">
+        <img src="{{ ('img/Codex.svg') }}" class="silver-sponsor round-corners">
+        <img src="{{ ('img/Qiscus.svg') }}" class="silver-sponsor round-corners">
+        <img src="{{ ('img/Indonesian Cloud.svg') }}" class="silver-sponsor round-corners">
       </div>
       <div class="silver-sponsor-container">
-        <div class="silver-sponsor round-corners"></div>
-        <div class="silver-sponsor round-corners"></div>
-        <div class="silver-sponsor round-corners"></div>
-        <div class="silver-sponsor round-corners"></div>
-        <div class="silver-sponsor round-corners"></div>
       </div>
     </section>
     <section class="container-fluid" id="med-part">
@@ -336,7 +332,7 @@
         <div class="text-social-media-contact">
           <div class="contact-text">
             <h1>>Git in touch_</h1>
-            <p>Fill up the form and send us an email, or reach out to us via social media</p>
+            <p>Fill up the form and send us an email,<br> or reach out to us via social media</p>
           </div>
           <div class="social-media-logos">
             <a href="https://www.instagram.com/bnccbinus/"><img src="{{ ('img/instagram.svg') }}"></a>
@@ -393,9 +389,9 @@
       </div>
 
     </section>
-    <section class="container-fluid" id="footage">
+    {{-- <section class="container-fluid" id="footage">
       <h1>Footage</h1>
-    </section>
+    </section> --}}
     <footer>
       <div class="footer-container">
         <img src="{{ ('img/logoTSfull.svg') }}" id="logoTSfooter">
