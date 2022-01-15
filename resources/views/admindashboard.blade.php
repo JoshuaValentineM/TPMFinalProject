@@ -82,7 +82,7 @@
                   @endif
                   <td>{{ $team->username}}</td>
                   <td>Rp 7.200.000,-</td>
-                  <td><button onclick="window.location.href='{{ route('downloadCV') }}'">View</button></td>
+                  <td><button onclick="window.location.href='{{ route('downloadCV') }}'" class="btn-admin btn rounded-pill">View</button></td>
                   <td><form action="{{route('verifyTeam', ['id'=>$team->id])}}" method="post">
                     @csrf
                     @method('PATCH')

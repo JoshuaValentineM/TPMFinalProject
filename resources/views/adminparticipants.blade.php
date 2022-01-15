@@ -83,8 +83,8 @@
                     @endif
 
                   <td>{{ $team->username}}</td>
-                  <td><button onclick="window.location.href='{{ route('editParticipant', ['id'=>$team->id]) }}'" class="admin-edit">Edit</button></td>
-                  <td><button onclick="window.location.href='{{ route('viewParticipant', ['id'=>$team->id]) }}'" class="admin-view">View</button></td>
+                  <td><button onclick="window.location.href='{{ route('editParticipant', ['id'=>$team->id]) }}'" class="btn-admin btn rounded-pill">Edit</button></td>
+                  <td><button onclick="window.location.href='{{ route('viewParticipant', ['id'=>$team->id]) }}'" class="btn-admin btn rounded-pill">View</button></td>
                   <td><form action="{{route('verifyTeam', ['id'=>$team->id])}}" method="post">
                     @csrf
                     @method('PATCH')
