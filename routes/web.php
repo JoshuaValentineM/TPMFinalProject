@@ -76,5 +76,7 @@ Route::group(['middleware' => IsAdminMiddleware::class], function () {
     Route::get('/admin-participant-member-edit/{id}/{memberid}', [AdminController::class, 'editParticipantMember'])->name('editParticipantMember');
     Route::patch('/admin-participant-member-edit/{id}',  [AdminController::class, 'updateParticipantMember'])->name('updateParticipantMember');
 
+    Route::delete('/admin-participant-member-delete/{id}/{memberid}', [AdminController::class, 'deleteParticipantMember'])->name('deleteParticipantMember');
+
     Route::get('/download', [AdminController::class, 'downloadCV'])->name('downloadCV');
 });

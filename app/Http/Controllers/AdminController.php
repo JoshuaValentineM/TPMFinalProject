@@ -193,4 +193,19 @@ class AdminController extends Controller
         // return view('admin-member-edit', ['members' => $member]);
         return redirect(route('getAdminParticipant'));
     }
+
+    public function deleteParticipantMember($id, $memberid)
+    {
+        Member::destroy($memberid);
+        // $member = Member::destroy($id);
+        // $leader = User::find($id);
+        // dd($member);
+        // $member->delete;
+        // $members = DB::table('members')->where('id', $id)->get()->toArray();
+        // dd($members);
+        //$member = Member::where('id', $id);
+        //$member = DB::table('members')->where('groupId',$groupId)->where('memberNo',$memberNo)->get();
+        // return view('admin-member-edit', ['members' => $member]);
+        return redirect(route('getAdminParticipant'));
+    }
 }

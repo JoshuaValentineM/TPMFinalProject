@@ -57,7 +57,13 @@
                     <th scope="row">Member</th>
                     <td>{{ $member->fullName }}</td>
                     <td><button onclick="window.location.href='{{ route('editParticipantMember', ['id'=>$leaders[0]->id, 'memberid'=>$member->id])}}'" class="btn-admin btn rounded-pill edit-button">Edit</button></td>
-                    <td><button class="btn-admin btn rounded-pill edit-button">Delete</button></td>
+                    <td>
+                        <form action="{{ route('deleteParticipantMember', ['id'=>$leaders[0]->id, 'memberid'=>$member->id])}}" method="post">
+                            @csrf
+                            @method('delete')
+                        <button type="submit" class="btn-admin btn rounded-pill edit-button">Delete</button>
+                    </form>
+                </td>
                 </tr>
                 @endforeach
                 {{-- <tr>
