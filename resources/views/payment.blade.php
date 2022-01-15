@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{asset('css/stylepayment.css')}}">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/925d587583.js" crossorigin="anonymous"></script>
+    <script src="{{asset('js/countdown.js')}}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset('css/navbar.css')}}">
     <link rel="icon" href="{{ ('img/favicon-32x32.png') }}" type="image/gif">
@@ -46,7 +47,7 @@
         <h2>Registration Period</h2>
         <div class="none-and-gradient">
             <h1>Opens in</h1>
-            <h1 class="gradient-font">12 days, 5 hours, 4 minutes</h1>
+            <h1 class="gradient-font" id="demo"></h1>
           </div>
 
         <div class="box-container">
@@ -56,7 +57,7 @@
 
             <div class="box-container">
               <div class="earlyBird-container">
-                <h4>7 days 0 hours left</h4>
+                <h4 id="cd-early-bird"></h4>
                 <div class="price">
                     <p class="rp">Rp</p>
                     <p class="nominal">720.000,-</p>
@@ -106,8 +107,19 @@
         <div class="paymentVerification">
             <p>Waiting for verification...</p>
 
-            <div class="box-container">
-                <img src="{{ ('img/Payment Indicator (Shape).svg') }}" alt="payment-indicator">
+            <div class="pill-container">
+                <div class="payment-status-container payment-icon">
+                  <img src="{{ ('img/Status (Finished - Checklist).svg') }}">
+                  <p class="payment-text">Upload Proof of Payment</p>
+                </div>
+                <div class="payment-status-container payment-icon">
+                  <img src="{{ ('img/Status (Pending - Clock).svg') }}">
+                  <p class="payment-text">Verification</p>
+                </div>
+                <div class="payment-status-container payment-icon">
+                  <img src="{{ ('img/Status (Pending - Dotted Circle).svg') }}">
+                  <p class="payment-text">You're ready to go!</p>
+                </div>
             </div>
             <form action="{{route('createPayment', ['id'=>$teamId])}}" method="POST" enctype="multipart/form-data">
                 @csrf

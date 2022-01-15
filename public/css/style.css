@@ -16,7 +16,6 @@ nav {
 
 #navbar-logo {
     max-height: 50px;
-    filter: invert(100%);
 }
 
 .btn {
@@ -99,14 +98,13 @@ a {
 #home-section {
     min-height: 90vh;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .hometext {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-right: 10%;
 }
 
 /* about */
@@ -490,14 +488,13 @@ Other events */
 }
 
 #virtualconference {
-    background-image: url(/Assets/OtherEvents/Virtual\ Conference\ -\ Shaped.svg);
+    background-image: url(/Assets/OtherEvents/Virtual\ Conference.svg);
     background-position: center center;
-    background-size: cover;
 }
 
 #developerworkshop {
-    background-image: url(/Assets/OtherEvents/Developer\ Workshop\ -\ Shaped.svg);
-    background-size: cover;
+    background-image: url(/Assets/OtherEvents/Developer\ Workshop.svg);
+    background-position: center center;
 }
 
 /* sponsors */
@@ -568,15 +565,15 @@ Other events */
     position: absolute;
     white-space: nowrap;
     will-change: transform;
-    animation: marquee 20s linear infinite;
+    animation: marquee 30s linear infinite;
 }
 
 .track2 {
     position: absolute;
     white-space: nowrap;
     will-change: transform;
-    animation: marquee 20s linear infinite;
-    animation-delay: -10s;
+    animation: marquee 30s linear infinite;
+    animation-delay: -15s;
 }
 
 .content {
@@ -643,7 +640,6 @@ footer {
 }
 
 #logoTSfooter {
-    filter: invert(100%);
     max-height: 50px;
 }
 

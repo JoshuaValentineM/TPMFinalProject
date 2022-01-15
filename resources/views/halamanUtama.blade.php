@@ -32,7 +32,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" href="{{ ('img/favicon-32x32.png') }}" type="image/gif">
+    <link rel="icon" href="{{ ('img/favicon-32x32.png') }}" image="image/gif">
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
@@ -72,11 +72,11 @@
     </nav>
     <section class="container-fluid" id="home-section">
         <div class="hometext">
-            <h1>>HACKATHON 5.0_</h1>
+        <h1>>HACKATHON 5.0_</h1>
         <h3>[Tagline]</h3>
     </div>
     <div>
-      <img src="{{ ('img/temp.jpg') }}">
+      <img src="{{ ('img/Landing Page Decoration.svg') }}" class="landingimg">
     </div>
     </section>
     <section class="container-fluid" id="about-section">
@@ -85,7 +85,7 @@
           <iframe class="round-corners" src="https://drive.google.com/file/d/1Hy-lQHIp9Qb8rQ0jrnaj0aPMBkVAnHm3/preview" width="640" height="360" allow="autoplay"></iframe>
         </div>
         <div class="about-text-btn">
-            <h1>About<br> Hackathon 5.0_</h1>
+            <h1 id="landing-page-text">About<br> Hackathon 5.0_</h1>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores accusantium illum alias quasi laudantium dolorum culpa repellat illo assumenda, eius vero suscipit est reiciendis pariatur, aut perferendis quia aperiam quo!</p>
           <div class="about-btn">
             <button onclick="window.location.href='{{ route('register') }}'" class="btn btn-outline-success rounded-pill" type="submit">Register NOW!</button>
@@ -319,13 +319,28 @@
     </section>
     <section class="container-fluid" id="med-part">
       <h1 class="main-title">Media Partners</h1>
-      <marquee>
-          <div class="media-partner round-corners"></div>
-          <div class="media-partner round-corners"></div>
-          <div class="media-partner round-corners"></div>
-          <div class="media-partner round-corners"></div>
-          <div class="media-partner round-corners"></div>
-      </marquee>
+      <div class="marquee">
+        <div class="track">
+          <div class="content">
+            <img src="{{ ('img/HIMTI.svg') }}">
+            <img src="{{ ('img/filemagz.svg') }}">
+            <img src="{{ ('img/Petani Kode.svg') }}">
+            <img src="{{ ('img/Eventkampus.svg') }}">
+            <img src="{{ ('img/Ruang Mahasiswa.com.svg') }}">
+            <img src="{{ ('img/CSC Binus.svg') }}">
+          </div>
+        </div>
+        <div class="track2">
+          <div class="content">
+            <img src="{{ ('img/HIMTI.svg') }}">
+            <img src="{{ ('img/filemagz.svg') }}">
+            <img src="{{ ('img/Petani Kode.svg') }}">
+            <img src="{{ ('img/Eventkampus.svg') }}">
+            <img src="{{ ('img/Ruang Mahasiswa.com.svg') }}">
+            <img src="{{ ('img/CSC Binus.svg') }}">
+          </div>
+        </div>
+      </div>
     </section>
     <section class="container-fluid" id="get-in-touch">
       <div class="get-in-touch-wrap">
