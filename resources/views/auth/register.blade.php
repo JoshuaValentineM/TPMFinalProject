@@ -168,37 +168,37 @@
               <div class="mb-3">
                 <label for="fullName" class="form-label">Full Name</label>
                 <div class="mb-3">
-                <input name="fullName" type="text" class="form-control" id="fullName" >
+                <input name="fullName" type="text" class="form-control" id="fullName" required>
               </div>
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email Leader</label>
                 <div class="mb-3">
-                <input name="email" type="email" class="form-control" id="email" >
+                <input name="email" type="email" class="form-control" id="email" required>
               </div>
               </div>
               <div class="mb-3">
                 <label for="whatsappNumber" class="form-label">Whatsapp Number</label>
                 <div class="mb-3">
-                <input name="whatsappNumber" type="text" class="form-control" id="whatsappNumber" placeholder="+62" >
+                <input name="whatsappNumber" type="text" class="form-control" id="whatsappNumber" placeholder="+62" required>
               </div>
               </div>
               <div class="mb-3">
                 <label for="lineID" class="form-label">LINE ID</label>
                 <div class="mb-3">
-                <input name="lineID" type="text" class="form-control" id="lineID" >
+                <input name="lineID" type="text" class="form-control" id="lineID" required>
               </div>
               </div>
               <div class="mb-3">
                 <label for="githubGitlabID" class="form-label">Github/Gitlab ID</label>
                 <div class="mb-3">
-                <input name="githubGitlabID" type="text" class="form-control" id="githubGitlabID" >
+                <input name="githubGitlabID" type="text" class="form-control" id="githubGitlabID" required>
               </div>
               </div>
               <div class="mb-3">
                 <label for="birthPlace" class="form-label">Birth Place</label>
                 <div class="mb-3">
-                <input name="birthPlace" type="text" class="form-control" id="birthPlace" >
+                <input name="birthPlace" type="text" class="form-control" id="birthPlace" required>
               </div>
               </div>
               <div class="mb-3">
@@ -207,26 +207,26 @@
                   <div class="mb-3">
                     <label for="dayBirthDate" class="form-label" style="font-size: 10pt;">Day</label>
                     <div class="mb-3">
-                    <input name="dayBirthDate" type="text" class="form-control" id="dayBirthDate" placeholder="DD">
+                    <input name="dayBirthDate" type="text" class="form-control" id="dayBirthDate" placeholder="DD" required>
                   </div>
                   </div>
                   <div class="mb-3">
                     <label for="monthBirthDate" class="form-label" style="font-size: 10pt;">Month</label>
                     <div class="mb-3">
-                    <input name="monthBirthDate" type="text" class="form-control" id="monthBirthDate" placeholder="MM">
+                    <input name="monthBirthDate" type="text" class="form-control" id="monthBirthDate" placeholder="MM" required>
                   </div>
                   </div>
                   <div class="mb-3">
                     <label for="yearBirthDate" class="form-label"style="font-size: 10pt;" >Year</label>
                     <div class="mb-3">
-                    <input name="yearBirthDate" type="text" class="form-control" id="yearBirthDate" placeholder="YYYY">
+                    <input name="yearBirthDate" type="text" class="form-control" id="yearBirthDate" placeholder="YYYY" required>
                   </div>
                   </div>
                 </div>
                 <div class="mb-3">
                     <label for="CV" class="form-label">Curriculum Vitae (CV)</label>
                     <div>
-                        <input name="CV" type="file" class="form-control file" id="CV" accept="application/pdf, image/png, image/jpg, image/jpeg">
+                        <input name="CV" type="file" class="form-control file" id="CV" accept="application/pdf, image/png, image/jpg, image/jpeg" required>
                         <label for="CV"><i class="fas fa-upload"></i>Add File</label>
                       </div>
                   </div>
@@ -238,7 +238,7 @@
                     <div class="mb-3">
                       <label for="IDCard" class="form-label">ID Card (Non-Binusian) / FlazzCard (Binusian)</label>
                       <div>
-                        <input name="IDCard" type="file" class="form-control file" id="IDCard" accept="application/pdf, image/png, image/jpg, image/jpeg">
+                        <input name="IDCard" type="file" class="form-control file" id="IDCard" accept="application/pdf, image/png, image/jpg, image/jpeg" required>
                         <label for="IDCard"><i class="fas fa-upload"></i>Add File</label>
                       </div>
                     </div>
