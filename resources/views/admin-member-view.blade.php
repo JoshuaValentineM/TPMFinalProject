@@ -34,7 +34,7 @@
     </nav>
     <section id="admin-dashboard">
       <div class=middle-admin>
-        <h2> {{ $leaders[0]->fullName }}</h2>
+        <h2> Leader : {{ $leaders[0]->fullName }}</h2>
         <div id="dashboard-container">
             @foreach ($members as $member )
             <br>

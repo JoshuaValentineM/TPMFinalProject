@@ -71,6 +71,10 @@ Route::group(['middleware' => IsAdminMiddleware::class], function () {
     Route::get('/admin-participant-edit/{id}', [AdminController::class, 'editParticipant'])->name('editParticipant');
 
     Route::get('/admin-participant-leader-edit/{id}', [AdminController::class, 'editParticipantLeader'])->name('editParticipantLeader');
+    Route::patch('/admin-participant-leader-edit/{id}',  [AdminController::class, 'updateParticipantLeader'])->name('updateParticipantLeader');
+
+    Route::get('/admin-participant-member-edit/{id}/{memberid}', [AdminController::class, 'editParticipantMember'])->name('editParticipantMember');
+    Route::patch('/admin-participant-member-edit/{id}',  [AdminController::class, 'updateParticipantMember'])->name('updateParticipantMember');
 
     Route::get('/download', [AdminController::class, 'downloadCV'])->name('downloadCV');
 });

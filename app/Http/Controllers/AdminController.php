@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MemberRequest;
+use App\Models\Member;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -109,5 +111,86 @@ class AdminController extends Controller
         $members = DB::table('members')->where('teamId', $teams)->get()->toArray();
         // dd($teams, $members, $leaders);
         return view('admin-leader-edit', ['members' => $members,], ['leaders' => $leaders]);
+    }
+
+    public function updateParticipantLeader(Request $request, $id)
+    {
+        $team = User::find($id);
+
+        $team->update([
+            'fullName' => $request->fullName,
+            'email' => $request->email,
+            'whatsappNumber' => $request->whatsappNumber,
+            'lineID' => $request->lineID,
+            'githubGitlabID' => $request->githubGitlabID,
+            'birthPlace' => $request->birthPlace,
+            'dayBirthDate' => $request->dayBirthDate,
+            'monthBirthDate' => $request->monthBirthDate,
+            'yearBirthDate' => $request->yearBirthDate,
+        ]);
+
+        return redirect(route('getAdminParticipant'));
+    }
+
+    public function editParticipantMember($id, $memberid)
+    {
+        // $teams = User::where('id', $id)->get();
+        // $teams = User::all();
+        $teams = $id;
+        $membersid = $memberid;
+        // $members = $id;
+        // $teams = $request->user()->id;
+        $leaders = DB::table('users')->where('id', $teams)->get()->toArray();
+        $members = DB::table('members')->where('id', $membersid)->get()->toArray();
+
+        // dd($teams, $leaders, $members);
+        return view('admin-member-edit', ['members' => $members,], ['leaders' => $leaders]);
+    }
+
+    // public function updateParticipantMember(Request $request, $id)
+    // {
+    //     // $teams = User::where('id', $id)->get();
+    //     // $teams = User::all();
+    //     $teams = $id;
+    //     // $membersid = $memberid;
+    //     $leaders = DB::table('users')->where('id', $teams)->get()->toArray();
+    //     $members = DB::table('members')->where('id', $teams)->get()->toArray();
+    //     // dd($teams, $leaders, $members);
+    //     $members->update([
+    //         'fullName' => $request->fullName,
+    //         'email' => $request->email,
+    //         'whatsappNumber' => $request->whatsappNumber,
+    //         'lineID' => $request->lineID,
+    //         'githubGitlabID' => $request->githubGitlabID,
+    //         'birthPlace' => $request->birthPlace,
+    //         'dayBirthDate' => $request->dayBirthDate,
+    //         'monthBirthDate' => $request->monthBirthDate,
+    //         'yearBirthDate' => $request->yearBirthDate,
+    //     ]);
+    //     return view('admin-member-edit', ['members' => $members,], ['leaders' => $leaders]);
+    // }
+
+    public function updateParticipantMember(MemberRequest $request, $id)
+    {
+        $member = Member::find($id);
+        $leader = User::find($id);
+        // dd($member);
+        $member->update([
+            'fullName' => $request->fullName,
+            'email' => $request->email,
+            'whatsappNumber' => $request->whatsappNumber,
+            'lineID' => $request->lineID,
+            'githubGitlabID' => $request->githubGitlabID,
+            'birthPlace' => $request->birthPlace,
+            'dayBirthDate' => $request->dayBirthDate,
+            'monthBirthDate' => $request->monthBirthDate,
+            'yearBirthDate' => $request->yearBirthDate,
+        ]);
+        $members = DB::table('members')->where('id', $id)->get()->toArray();
+        // dd($members);
+        //$member = Member::where('id', $id);
+        //$member = DB::table('members')->where('groupId',$groupId)->where('memberNo',$memberNo)->get();
+        // return view('admin-member-edit', ['members' => $member]);
+        return redirect(route('getAdminParticipant'));
     }
 }

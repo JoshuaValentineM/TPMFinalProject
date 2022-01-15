@@ -225,7 +225,10 @@
                 </div>
                 <div class="mb-3">
                     <label for="CV" class="form-label">Curriculum Vitae (CV)</label>
-                    <input name="CV" type="file" class="form-control" id="CV" placeholder="Add file">
+                    <div>
+                        <input name="CV" type="file" class="form-control file" id="CV" accept="application/pdf, image/png, image/jpg, image/jpeg">
+                        <label for="CV"><i class="fas fa-upload"></i>Add File</label>
+                      </div>
                   </div>
                   <div class="idCard">
                     {{-- <div class="mb-3">
@@ -234,7 +237,10 @@
                     </div> --}}
                     <div class="mb-3">
                       <label for="IDCard" class="form-label">ID Card (Non-Binusian) / FlazzCard (Binusian)</label>
-                      <input name="IDCard" type="file" class="form-control" id="IDCard" >
+                      <div>
+                        <input name="IDCard" type="file" class="form-control file" id="IDCard" accept="application/pdf, image/png, image/jpg, image/jpeg">
+                        <label for="IDCard"><i class="fas fa-upload"></i>Add File</label>
+                      </div>
                     </div>
                   </div>
               </div>

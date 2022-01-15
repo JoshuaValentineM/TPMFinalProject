@@ -1,12 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Reem Kufi', sans-serif;
 }
 
 .registerPage {
     display: flex;
     position: relative;
+}
+
+.logo {
+    filter: invert(100%);
 }
 
 .headRegisterPage {
@@ -20,11 +27,16 @@
 }
 
 .leftRegisterPage {
-    background-color: rgb(218, 218, 218);
+    background-color: rgb(10, 14, 47);
     position: fixed;
     height: 100%;
     width: 550px;
     padding: 50px;
+}
+
+.leftRegisterPage>h2 {
+    color: white;
+    padding-top: 30px;
 }
 
 .rightRegisterPage {
@@ -36,6 +48,7 @@
 .registerForm h3 {
     padding-top: 80px;
     padding-bottom: 25px;
+    font-weight: bold;
 }
 
 form>div {
@@ -77,4 +90,89 @@ button {
 .birthdate {
     display: flex;
     justify-content: space-between;
+}
+
+
+
+.idCard {
+    display: flex;
+
+}
+
+.form-control {
+    background-color: rgb(196, 196, 196);
+}
+
+.btn-primary {
+    background-color: rgb(196, 196, 196);
+    border-color: rgb(196, 196, 196);
+}
+
+.IDCard-container {
+    padding-left: 20%;
+}
+
+
+.requirements {
+    display: none;
+}
+
+.wrong {
+    display: block;
+}
+
+.btn {
+    background-color: #9152FE;
+    color: #fff;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #9152FE;
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset;
+}
+
+.form-check-input:checked {
+    background-color: #9152FE;
+    border-color: #9152FE;
+}
+
+
+/* UPLOAD FILE BUTTON STYLE */
+
+[type="file"] {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    white-space: nowrap;
+    width: 1px;
+}
+
+[type="file"]+label {
+    background-color: rgb(145, 82, 254);
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 700;
+    height: 4rem;
+    line-height: 4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    transition: background-color 0.3s;
+}
+
+[type="file"]+label:hover {
+    background-color: rgb(145, 82, 254);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset;
+}
+
+.fa-upload {
+    padding: 5px;
 }

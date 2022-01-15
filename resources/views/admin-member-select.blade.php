@@ -20,13 +20,13 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                <a class="nav-link active" aria-current="page" href="{{ route('getAdminDashboard') }}">Dashboard</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Participants</a>
+                <a class="nav-link active" aria-current="page" href="{{ route('getAdminParticipant') }}">Participants</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Logout</a>
+                <a class="nav-link active" aria-current="page" href="{{ route('logout') }}">Logout</a>
               </li>
             </ul>
           </div>
@@ -52,24 +52,26 @@
                   <td><button onclick="window.location.href='{{ route('editParticipantLeader', ['id'=>$leaders[0]->id]) }}'" class="btn-admin btn rounded-pill edit-button">Edit</button></td>
                   <td><button class="btn-admin btn rounded-pill edit-button">Delete</button></td>
                 </tr>
+                @foreach ($members as $member)
                 <tr>
-                    <th scope="row">Member 1</th>
-                    <td>Name 2</td>
-                    <td><button class="btn-admin btn rounded-pill edit-button">Edit</button></td>
+                    <th scope="row">Member</th>
+                    <td>{{ $member->fullName }}</td>
+                    <td><button onclick="window.location.href='{{ route('editParticipantMember', ['id'=>$leaders[0]->id, 'memberid'=>$member->id])}}'" class="btn-admin btn rounded-pill edit-button">Edit</button></td>
                     <td><button class="btn-admin btn rounded-pill edit-button">Delete</button></td>
                 </tr>
-                <tr>
+                @endforeach
+                {{-- <tr>
                     <th scope="row">Member 2</th>
-                    <td>Name 3</td>
-                    <td><button class="btn-admin btn rounded-pill edit-button">Edit</button></td>
+                    <td>{{ $members[1]->fullName }}</td>
+                    <td><button onclick="window.location.href='{{ route('editParticipantMember', ['id'=>$leaders[0]->id])}}'" class="btn-admin btn rounded-pill edit-button">Edit</button></td>
                     <td><button class="btn-admin btn rounded-pill edit-button">Delete</button></td>
                 </tr>
                 <tr>
                     <th scope="row">Member 3</th>
-                    <td>Name 4</td>
-                    <td><button class="btn-admin btn rounded-pill edit-button">Edit</button></td>
+                    <td>{{ $members[2]->fullName }}</td>
+                    <td><button onclick="window.location.href='{{ route('editParticipantMember', ['id'=>$leaders[0]->id])}}'" class="btn-admin btn rounded-pill edit-button">Edit</button></td>
                     <td><button class="btn-admin btn rounded-pill edit-button">Delete</button></td>
-                </tr>
+                </tr> --}}
               </tbody>
             </table>
         </div>

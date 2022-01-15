@@ -116,17 +116,6 @@ h4 {
 
 }
 
-.file {
-    margin-left: 26%;
-    margin-top: 20px;
-    margin-bottom: 100px;
-    /* background-image: url(/Assets/Add\ File\ Button.svg);
-    background-size: cover; */
-    width: 149px;
-    height: 64px;
-    overflow: hidden;
-
-}
 
 .none-and-gradient {
     display: flex;
@@ -136,6 +125,7 @@ h4 {
 .none-and-gradient>h1 {
     padding: 5px;
 }
+
 
 .gradient-font {
     background: -webkit-linear-gradient(#FB4FFF, #9152FE);
@@ -175,4 +165,86 @@ h4 {
 .paymentVerification>p {
     display: flex;
     justify-content: center;
+    color: white;
+    font-size: 24px;
+}
+
+.upload-file-button {
+    margin-left: 20%;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    align-self: flex-start;
+}
+
+/* UPLOAD FILE BUTTON STYLE */
+
+[type="file"] {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    white-space: nowrap;
+    width: 1px;
+}
+
+[type="file"]+label {
+    background-color: rgb(145, 82, 254);
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 700;
+    height: 4rem;
+    line-height: 4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    transition: background-color 0.3s;
+}
+
+[type="file"]+label:hover {
+    background-color: rgb(145, 82, 254);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset;
+}
+
+.fa-upload {
+    padding: 5px;
+}
+
+/* pillbox */
+.paymentVerification {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pill-container {
+    width: 80%;
+    display: flex;
+    height: 150px;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 75px;
+    background-image: linear-gradient(to right, #FB4FFF, #9152FE);
+}
+
+.payment-status-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-icon {
+    font-size: 50px;
+}
+
+.payment-text {
+    margin-top: 20px;
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 0;
 }
