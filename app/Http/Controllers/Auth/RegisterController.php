@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -90,6 +91,12 @@ class RegisterController extends Controller
         // $IDCard_file_name = request()->file('IDCard')->getClientOriginalName();
         // $IDCard = request()->file('IDCard')->storeAs('file-data', $IDCard_file_name);
 
+        $CVName = request()->file('CV')->getClientOriginalName();
+        $CV = request()->file('CV')->move('fileStorageCV', $CVName);
+
+        $IDCardName = request()->file('IDCard')->getClientOriginalName();
+        $IDCard = request()->file('IDCard')->move('fileStorageIDCard', $IDCardName);
+
         return User::create([
             // 'role' => $data['role'],
             // 'name' => $data['name'],
@@ -106,9 +113,9 @@ class RegisterController extends Controller
             'dayBirthDate' => $data['dayBirthDate'],
             'monthBirthDate' => $data['monthBirthDate'],
             'yearBirthDate' => $data['yearBirthDate'],
-            'CV' => $data['CV'],
+            'CV' => $CVName,
             // // // 'flazzCard' => $data['flazzCard'],
-            'IDCard' => $data['IDCard'],
+            'IDCard' => $IDCardName,
         ]);
     }
 }

@@ -44,9 +44,9 @@ class MemberController extends Controller
             'dayBirthDate' => $request['dayBirthDate'],
             'monthBirthDate' => $request['monthBirthDate'],
             'yearBirthDate' => $request['yearBirthDate'],
-            'CV' => $CV,
+            'CV' => $CVName,
             // 'flazzCard' => $request['flazzCard'],
-            'IDCard' => $IDCard,
+            'IDCard' => $IDCardName,
             'teamId' => $id,
             'memberNumber' => $memberNumber,
         ]);

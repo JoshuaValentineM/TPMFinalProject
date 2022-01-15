@@ -80,12 +80,12 @@
                     </div>
                   </div>
                   <div class="mb-3">
-                      <label for="CV" class="form-label">Curriculum Vitae (CV)</label>
                       <input name="CV" type="file" class="form-control" value="{{$members[0]->CV}}" id="CV" required>
+                      <label for="CV"><i class="fas fa-upload"></i>Curriculum Vitae (CV)</label>
                   </div>
                   <div class="mb-3">
-                      <label for="IDCard" class="form-label">Flazz Card/ID Card</label>
                       <input name="IDCard" type="file" class="form-control" value="{{$members[0]->IDCard}}" id="IDCard" required>
+                      <label for="IDCard"><i class="fas fa-upload"></i>Flazz Card/IDCard</label>
                   </div>
                   <button type="submit" class="btn btn-primary rounded-pill">Edit</button>
               </form>

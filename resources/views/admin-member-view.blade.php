@@ -58,10 +58,16 @@
             <p>{{ $member->dayBirthDate}}//{{ $member->monthBirthDate}}//{{ $member->yearBirthDate}}</p>
             <hr>
             <h3>Curriculum Vitae</h3>
+            <form action="{{route('downloadCV', ['id'=>$member->id])}}" method="get">
+                @csrf
             <button class="btn" type="submit"><i class="fas fa-download"></i> &nbsp Download</button>
+            </form>
             <hr>
             <h3>Flazz / ID Card</h3>
+            <form action="{{route('downloadIDCard', ['id'=>$member->id])}}" method="get">
+                @csrf
             <button class="btn" type="submit"><i class="fas fa-download"></i> &nbsp Download</button>
+             </form>
             <br>
             @endforeach
         </div>

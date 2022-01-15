@@ -7,6 +7,7 @@
     <title>Technoscape</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/925d587583.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="{{ ('img/favicon-32x32.png') }}" image="image/gif">
 </head>
@@ -80,12 +81,12 @@
                     </div>
                   </div>
                   <div class="mb-3">
-                      <label for="CV" class="form-label">Curriculum Vitae (CV)</label>
                       <input name="CV" type="file" class="form-control" value="{{$leaders[0]->CV}}" id="CV" required>
+                      <label for="CV"><i class="fas fa-upload"></i>Curriculum Vitae (CV)</label>
                   </div>
                   <div class="mb-3">
-                      <label for="IDCard" class="form-label">Flazz Card/ID Card</label>
-                      <input name="IDCard" type="file" class="form-control" value="{{$leaders[0]->IDCard}}" id="IDCard" required>
+                      <input name="IDCard" type="file" class="form-control file" value="{{$leaders[0]->IDCard}}" id="IDCard" required accept="application/pdf, image/png, image/jpg, image/jpeg">
+                      <label for="IDCard"><i class="fas fa-upload"></i>Flazz Card/IDCard</label>
                   </div>
                   <button type="submit" class="btn btn-primary rounded-pill">Edit</button>
               </form>

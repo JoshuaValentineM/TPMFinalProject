@@ -79,4 +79,7 @@ Route::group(['middleware' => IsAdminMiddleware::class], function () {
     Route::delete('/admin-participant-member-delete/{id}/{memberid}', [AdminController::class, 'deleteParticipantMember'])->name('deleteParticipantMember');
 
     Route::get('/download/{id}', [AdminController::class, 'downloadpayment'])->name('downloadpayment');
+
+    Route::get('/downloadCV/{id}', [AdminController::class, 'downloadCV'])->name('downloadCV');
+    Route::get('/downloadIDCard/{id}', [AdminController::class, 'downloadIDCard'])->name('downloadIDCard');
 });

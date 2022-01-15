@@ -34,29 +34,32 @@
     </nav>
     <section id="admin-dashboard">
       <div class=middle-admin>
-        <h2> < Nama Tim</h2>
+        <h2> < {{ $leaders->username }}</h2>
         <div id="dashboard-container">
-            <h1>Leader - Nama Leader</h1>
+            <h1>Leader - {{ $leaders->fullName }}</h1>
             <h3>Email:</h3>
-            <p>example Mail</p>
+            <p>{{ $leaders->email }}</p>
             <hr>
             <h3>Whatsapp Number:</h3>
-            <p>example number</p>
+            <p>{{ $leaders->whatsappNumber }}</p>
             <hr>
             <h3>LINE ID:</h3>
-            <p>example Line ID</p>
+            <p>{{ $leaders->lineID }}</p>
             <hr>
             <h3>GitHub.GitLab ID:</h3>
-            <p>example GitHub ID</p>
+            <p>{{ $leaders->githubGitlabID }}</p>
             <hr>
             <h3>Birth Place:</h3>
-            <p>example Birthplace</p>
+            <p>{{ $leaders->birthPlace }}</p>
             <hr>
             <h3>Birth Date:</h3>
-            <p>dd/mm/yyyy</p>
+            <p>{{ $leaders->dayBirthDate }}//{{ $leaders->monthBirthDate }}//{{ $leaders->yearBirthDate }}</p>
             <hr>
             <h3>Curriculum Vitae</h3>
+            <form action="{{route('downloadCV', ['id'=>$leaders->id])}}" method="get">
+                @csrf
             <button class="btn" type="submit"><i class="fas fa-download"></i> &nbsp Download</button>
+            </form>
             <hr>
             <h3>Flazz / ID Card</h3>
             <button class="btn" type="submit"><i class="fas fa-download"></i> &nbsp Download</button>

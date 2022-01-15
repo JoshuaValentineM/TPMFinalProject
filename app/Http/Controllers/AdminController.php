@@ -215,4 +215,44 @@ class AdminController extends Controller
         // return view('admin-member-edit', ['members' => $member]);
         return redirect(route('getAdminParticipant'));
     }
+
+    public function downloadCV(Request $request, $id)
+    {
+        $teamId = $id;
+        $filename = DB::table('members')->where('id', $teamId)->first()->CV;
+
+        // dd($filename);
+        // $filenames = $request->$filename->file();
+        // dd($filenames);
+        // $file = public_path('fileStorageCV/1642091972.jpg');
+        // $teams = User::where('id', $id)->get();
+        // $filename = $request->$teams->payment;
+        // dd($filename);
+        $file = public_path('fileStorageCV/' . $filename);
+        // $file = storage_path('app/payment-data/temp.jpg');
+
+        // return response()->download(public_path('fileStoragepayment/' . $filename));
+        return response()->download($file);
+        // return response()->download($file);
+    }
+
+    public function downloadIDCard(Request $request, $id)
+    {
+        $teamId = $id;
+        $filename = DB::table('members')->where('id', $teamId)->first()->CV;
+
+        // dd($filename);
+        // $filenames = $request->$filename->file();
+        // dd($filenames);
+        // $file = public_path('fileStorageCV/1642091972.jpg');
+        // $teams = User::where('id', $id)->get();
+        // $filename = $request->$teams->payment;
+        // dd($filename);
+        $file = public_path('fileStorageIDCard/' . $filename);
+        // $file = storage_path('app/payment-data/temp.jpg');
+
+        // return response()->download(public_path('fileStoragepayment/' . $filename));
+        return response()->download($file);
+        // return response()->download($file);
+    }
 }
