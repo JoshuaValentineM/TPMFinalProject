@@ -127,19 +127,19 @@
               <div class="mb-3">
                 <label for="username" class="form-label">Team Name</label>
                 <div class="mb-3">
-                <input name="username" type="text" class="form-control" id="username" >
+                <input name="username" type="text" class="form-control" id="username" oninput="validateusername()" >
               </div>
               </div>
               <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <div class="mb-3">
-                <input name="password" type="password" class="form-control" id="password" placeholder="Min. 8 characters containing an uppercase and lowercase letter, a number, and a symbol.">
+                <input name="password" type="password" class="form-control" id="password" placeholder="Min. 8 characters containing an uppercase and lowercase letter, a number, and a symbol." oninput="validatepassword()">
               </div>
               </div>
               <div class="mb-3">
                 <label for="password-confirm" class="form-label">{{ __('Confirm Password') }}</label>
                 <div class="mb-3">
-                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" oninput="confirmpassword()">
               </div>
               </div>
               <div class="checkboxStatus">
@@ -168,19 +168,19 @@
               <div class="mb-3">
                 <label for="fullName" class="form-label">Full Name</label>
                 <div class="mb-3">
-                <input name="fullName" type="text" class="form-control" id="fullName" required>
+                <input name="fullName" type="text" class="form-control" id="fullName" required oninput="validatefullName()">
               </div>
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email Leader</label>
                 <div class="mb-3">
-                <input name="email" type="email" class="form-control" id="email" required>
+                <input name="email" type="email" class="form-control" id="email" required oninput="validateemail()">
               </div>
               </div>
               <div class="mb-3">
                 <label for="whatsappNumber" class="form-label">Whatsapp Number</label>
                 <div class="mb-3">
-                <input name="whatsappNumber" type="text" class="form-control" id="whatsappNumber" placeholder="+62" required>
+                <input name="whatsappNumber" type="text" class="form-control" id="whatsappNumber" placeholder="+62" required oninput="validatewhatsappNumber()">
               </div>
               </div>
               <div class="mb-3">
@@ -198,7 +198,7 @@
               <div class="mb-3">
                 <label for="birthPlace" class="form-label">Birth Place</label>
                 <div class="mb-3">
-                <input name="birthPlace" type="text" class="form-control" id="birthPlace" required>
+                <input name="birthPlace" type="text" class="form-control" id="birthPlace" required >
               </div>
               </div>
               <div class="mb-3">
@@ -207,19 +207,19 @@
                   <div class="mb-3">
                     <label for="dayBirthDate" class="form-label" style="font-size: 10pt;">Day</label>
                     <div class="mb-3">
-                    <input name="dayBirthDate" type="text" class="form-control" id="dayBirthDate" placeholder="DD" required>
+                    <input name="dayBirthDate" type="text" class="form-control" id="dayBirthDate" placeholder="DD" required >
                   </div>
                   </div>
                   <div class="mb-3">
                     <label for="monthBirthDate" class="form-label" style="font-size: 10pt;">Month</label>
                     <div class="mb-3">
-                    <input name="monthBirthDate" type="text" class="form-control" id="monthBirthDate" placeholder="MM" required>
+                    <input name="monthBirthDate" type="text" class="form-control" id="monthBirthDate" placeholder="MM" required >
                   </div>
                   </div>
                   <div class="mb-3">
                     <label for="yearBirthDate" class="form-label"style="font-size: 10pt;" >Year</label>
                     <div class="mb-3">
-                    <input name="yearBirthDate" type="text" class="form-control" id="yearBirthDate" placeholder="YYYY" required>
+                    <input name="yearBirthDate" type="text" class="form-control" id="yearBirthDate" placeholder="YYYY" required >
                   </div>
                   </div>
                 </div>
@@ -253,5 +253,6 @@
       </div>
 
     </section>
+    <script src="{{asset('js/tesvalidate.js')}}"></script>
 </body>
 </html>
