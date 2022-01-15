@@ -75,9 +75,9 @@
               <tbody>
                 @foreach ($teams as $team )
                 <tr>
-                    @if ($team->verification==1)
+                    @if ($team->verification==2)
                   <th scope="row"><i class="fas fa-check-circle dash-icon"></i></th>
-                    @elseif ($team->verification==0)
+                    @else
                   <th scope="row"><i class="fas fa-clock dash-icon"></i></th>
                   @endif
                   <td>{{ $team->username}}</td>
@@ -86,6 +86,7 @@
                     <form action="{{route('downloadpayment', ['id'=>$team->id])}}" method="get">
                         @csrf
                       <button type="submit" class="btn-admin btn rounded-pill">View</button>
+                    </form>
                     </td>
                   <td><form action="{{route('verifyTeam', ['id'=>$team->id])}}" method="post">
                     @csrf
@@ -93,9 +94,6 @@
                     <button type="submit" class="btn btn-primary">Verify</button>
                 </form></td>
                   @endforeach
-
-
-
                 </tr>
                 {{-- <tr>
                   <th scope="row"><i class="fas fa-circle"></i></th>

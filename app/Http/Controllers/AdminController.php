@@ -25,7 +25,7 @@ class AdminController extends Controller
     {
         $teams = User::find($id);
 
-        $teams->update(['verification' => 1,]);
+        $teams->update(['verification' => 2,]);
 
         return redirect(route('getAdminDashboard'));
     }
@@ -39,7 +39,7 @@ class AdminController extends Controller
 
     public function verifiedTeamList()
     {
-        $teams = User::where('verification', 1)->get();
+        $teams = User::where('verification', 2)->get();
         // dd($teams);
         return view('admindashboard', compact('teams'));
         // return view('admindashboard', ['teams' => $teams]);
@@ -63,17 +63,18 @@ class AdminController extends Controller
 
     public function verifiedTeamParticipantList()
     {
-        $teams = User::where('verification', 1)->get();
+        $teams = User::where('verification', 2)->get();
         return view('adminparticipants', compact('teams'));
     }
 
     public function downloadpayment(Request $request, $id)
     {
         $teamId = $id;
-        $filename = DB::table('payments')->where('teamId', $teamId);
+        $filename = DB::table('payments')->where('teamId', $teamId)->first()->payment;
 
-        $filenames = $request->$filename->file();
-        dd($filenames);
+        // dd($filename);
+        // $filenames = $request->$filename->file();
+        // dd($filenames);
         // $file = public_path('fileStorageCV/1642091972.jpg');
         // $teams = User::where('id', $id)->get();
         // $filename = $request->$teams->payment;

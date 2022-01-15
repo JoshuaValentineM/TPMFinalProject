@@ -105,7 +105,8 @@
 
 
         <div class="paymentVerification">
-            @if(empty($payments))
+            {{-- @if($payments == null) --}}
+            @if ($verifikasi == 0)
             <p>Please upload payment file...</p>
             <div class="pill-container">
                 <div class="payment-status-container payment-icon">
@@ -130,7 +131,7 @@
                 </form>
               </div>
               @endif
-              @if ($verifikasi == 0)
+              @if ($verifikasi == 1)
               <p>Waiting for verification...</p>
               <div class="pill-container">
                   <div class="payment-status-container payment-icon">
@@ -146,7 +147,7 @@
                     <p class="payment-text">You're ready to go!</p>
                   </div>
               </div>
-              @else
+              @elseif ($verifikasi == 2)
               <p>You're ready to go!</p>
               <div class="pill-container">
                   <div class="payment-status-container payment-icon">

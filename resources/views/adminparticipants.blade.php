@@ -76,7 +76,7 @@
               <tbody>
                 @foreach ($teams as $team )
                 <tr>
-                    @if ($team->verification===1)
+                    @if ($team->verification==2)
                     <th scope="row"><i class="fas fa-check-circle dash-icon"></i></th>
                       @else
                     <th scope="row"><i class="fas fa-clock dash-icon"></i></th>

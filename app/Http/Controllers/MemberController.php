@@ -74,9 +74,9 @@ class MemberController extends Controller
     public function getTeamPaymentById(Request $request)
     {
         $teamId = $request->user()->id;
-        $payment1 = Payment::all();
+        $payment1 = DB::table('payments')->where('teamId', $teamId)->get();
         $verifikasi = $request->user()->verification;
-        // dd($verifikasi);
+        // dd($payment1);
         return view('payment', ['teamId' => $teamId, 'payments' => $payment1, 'verifikasi' => $verifikasi]);
     }
 
@@ -90,8 +90,12 @@ class MemberController extends Controller
         // $payment_file_name = $request->payment->getClientOriginalName();
         // $payment = $request->file('payment')->storeAs('payment-data', $payment_file_name);
 
+        $teams = User::find($id);
+
+        $teams->update(['verification' => 1,]);
+
         Payment::create([
-            'payment' => $payment,
+            'payment' => $paymentName,
             'teamId' => $id,
         ]);
         return redirect(route('getTeamPaymentById'));
