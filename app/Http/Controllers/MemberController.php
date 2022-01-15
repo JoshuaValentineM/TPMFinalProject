@@ -74,7 +74,10 @@ class MemberController extends Controller
     public function getTeamPaymentById(Request $request)
     {
         $teamId = $request->user()->id;
-        return view('payment', ['teamId' => $teamId]);
+        $payment1 = Payment::all();
+        $verifikasi = $request->user()->verification;
+        // dd($verifikasi);
+        return view('payment', ['teamId' => $teamId, 'payments' => $payment1, 'verifikasi' => $verifikasi]);
     }
 
     // merupakan Cara upload file bukti ke tabel payment
@@ -91,7 +94,7 @@ class MemberController extends Controller
             'payment' => $payment,
             'teamId' => $id,
         ]);
-        return redirect(route('halamanUtama'));
+        return redirect(route('getTeamPaymentById'));
     }
 
     // public function createPayment(PaymentRequest $request, $payment)

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\MemberRequest;
 use App\Models\Member;
+use App\Models\Payment;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -15,6 +16,8 @@ class AdminController extends Controller
         $teamId = $request->user()->id;
         // $teams = DB::table('users')->where('id', $teamId)->get()->toArray();
         $teams = User::all()->except(1);
+        // $filename = DB::table('payments')->where('teamId', $teamId);
+        // dd($filename);
         return view('admindashboard', ['teams' => $teams]);
     }
 
@@ -64,18 +67,21 @@ class AdminController extends Controller
         return view('adminparticipants', compact('teams'));
     }
 
-    public function downloadCV(Request $request, $id)
+    public function downloadpayment(Request $request, $id)
     {
-        $file = public_path('fileStorageCV/1642091972.jpg');
+        $teamId = $id;
+        $filename = DB::table('payments')->where('teamId', $teamId);
+
+        $filenames = $request->$filename->file();
+        dd($filenames);
+        // $file = public_path('fileStorageCV/1642091972.jpg');
         // $teams = User::where('id', $id)->get();
         // $filename = $request->$teams->payment;
         // dd($filename);
-        // $file = storage_path('app/payment-data/' . $filename);
-
+        $file = public_path('fileStoragepayment/' . $filename);
         // $file = storage_path('app/payment-data/temp.jpg');
 
-
-        // return response()->download(public_path('filestorageCV/' . $CV));
+        // return response()->download(public_path('fileStoragepayment/' . $filename));
         return response()->download($file);
         // return response()->download($file);
     }

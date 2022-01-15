@@ -105,15 +105,15 @@
 
 
         <div class="paymentVerification">
-            <p>Waiting for verification...</p>
-
+            @if(empty($payments))
+            <p>Please upload payment file...</p>
             <div class="pill-container">
                 <div class="payment-status-container payment-icon">
-                  <img src="{{ ('img/Status (Finished - Checklist).svg') }}">
+                  <img src="{{ ('img/Status (Pending - Clock).svg') }}">
                   <p class="payment-text">Upload Proof of Payment</p>
                 </div>
                 <div class="payment-status-container payment-icon">
-                  <img src="{{ ('img/Status (Pending - Clock).svg') }}">
+                  <img src="{{ ('img/Status (Pending - Dotted Circle).svg') }}">
                   <p class="payment-text">Verification</p>
                 </div>
                 <div class="payment-status-container payment-icon">
@@ -121,7 +121,49 @@
                   <p class="payment-text">You're ready to go!</p>
                 </div>
             </div>
-            <form action="{{route('createPayment', ['id'=>$teamId])}}" method="POST" enctype="multipart/form-data">
+            <div class="upload-file-button">
+                <form action="{{route('createPayment', ['id'=>$teamId])}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                <input name="payment" type="file" class="form-control file" id="payment-proof" placeholder="Add file">
+                <label for="payment-proof"><i class="fas fa-upload"></i>Add File</label>
+                <button payment type="submit" class="btn btn-primary">Submit Bukti</button>
+                </form>
+              </div>
+              @endif
+              @if ($verifikasi == 0)
+              <p>Waiting for verification...</p>
+              <div class="pill-container">
+                  <div class="payment-status-container payment-icon">
+                    <img src="{{ ('img/Status (Finished - Checklist).svg') }}">
+                    <p class="payment-text">Upload Proof of Payment</p>
+                  </div>
+                  <div class="payment-status-container payment-icon">
+                    <img src="{{ ('img/Status (Pending - Clock).svg') }}">
+                    <p class="payment-text">Verification</p>
+                  </div>
+                  <div class="payment-status-container payment-icon">
+                    <img src="{{ ('img/Status (Pending - Dotted Circle).svg') }}">
+                    <p class="payment-text">You're ready to go!</p>
+                  </div>
+              </div>
+              @else
+              <p>You're ready to go!</p>
+              <div class="pill-container">
+                  <div class="payment-status-container payment-icon">
+                    <img src="{{ ('img/Status (Finished - Checklist).svg') }}">
+                    <p class="payment-text">Upload Proof of Payment</p>
+                  </div>
+                  <div class="payment-status-container payment-icon">
+                    <img src="{{ ('img/Status (Finished - Checklist).svg') }}">
+                    <p class="payment-text">Verification</p>
+                  </div>
+                  <div class="payment-status-container payment-icon">
+                    <img src="{{ ('img/Status (Finished - Checklist).svg') }}">
+                    <p class="payment-text">You're ready to go!</p>
+                  </div>
+              </div>
+              @endif
+            {{-- <form action="{{route('createPayment', ['id'=>$teamId])}}" method="POST" enctype="multipart/form-data">
                 @csrf
             <div>
                 <div class="upload-file-button">
@@ -131,7 +173,9 @@
 
             </div>
             <button type="submit" class="btn btn-primary">Submit Bukti</button>
-            </form>
+            </form> --}}
+
+
              {{-- <div class="box-container">
               <div class="payment-indicator">
                 <div class="payment-proof">
@@ -150,7 +194,7 @@
             </div> --}}
         </div>
         <div>
-            <button onclick="window.location.href='{{ route('downloadCV') }}'" type="submit" class="btn btn-primary">Download Bukti</button>
+            {{-- <button onclick="window.location.href='{{ route('downloadCV') }}'" type="submit" class="btn btn-primary">Download Bukti</button> --}}
         </div>
 
 
