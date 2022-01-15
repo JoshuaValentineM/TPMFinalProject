@@ -34,7 +34,7 @@
     </nav>
     <section id="admin-dashboard">
       <div class=middle-admin>
-        <h2>Edit - Nama Tim</h2>
+        <h2>Edit - {{ $leaders[0]->username }}</h2>
         <div id="dashboard-container">
             <table class="table">
               <thead>
@@ -48,8 +48,8 @@
               <tbody>
                 <tr>
                   <th scope="row">Leader</th>
-                  <td>Name 1</td>
-                  <td><button class="btn-admin btn rounded-pill edit-button">Edit</button></td>
+                  <td>{{ $leaders[0]->fullName }}</td>
+                  <td><button onclick="window.location.href='{{ route('editParticipantLeader', ['id'=>$leaders[0]->id]) }}'" class="btn-admin btn rounded-pill edit-button">Edit</button></td>
                   <td><button class="btn-admin btn rounded-pill edit-button">Delete</button></td>
                 </tr>
                 <tr>

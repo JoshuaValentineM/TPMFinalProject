@@ -66,9 +66,9 @@ class MemberController extends Controller
         $membernomor2 = DB::table('members')->where('teamId', $teamId)->where('memberNumber', 2)->get()->toArray();
         $membernomor3 = DB::table('members')->where('teamId', $teamId)->where('memberNumber', 3)->get()->toArray();
         // dd($leaders);
-        // dd($membernomor1);
+        // dd($membernomor1, $membernomor2);
         // $members = Member::all();
-        return view('dashboard', ['teamId' => $teamId, 'members' => $members], ['leaders' => $leaders], ['membernomor1' => $membernomor1, 'membernomor2' => $membernomor2, 'membernomor3' => $membernomor3,]);
+        return view('dashboard', ['teamId' => $teamId, 'members' => $members, 'membernomor1' => $membernomor1, 'membernomor2' => $membernomor2, 'membernomor3' => $membernomor3,], ['leaders' => $leaders]);
     }
 
     public function getTeamPaymentById(Request $request)

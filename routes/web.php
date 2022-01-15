@@ -46,7 +46,7 @@ Route::get('/timeline', function () {
 
 Route::post('/upload-bukti/{id}', [MemberController::class, 'createPayment'])->name('createPayment');
 
-Route::get('/download', [AdminController::class, 'downloadCV'])->name('downloadCV');
+
 
 // Route::get('/get-team', [MemberController::class, 'getTeamById'])->name('getTeamById');
 
@@ -59,8 +59,18 @@ Route::group(['middleware' => IsAdminMiddleware::class], function () {
     Route::get('/search-team', [AdminController::class, 'searchTeam'])->name('searchTeam');
 
     Route::get('/verified-team', [AdminController::class, 'verifiedTeamList'])->name('verifiedTeamList');
+    Route::get('/unverified-team', [AdminController::class, 'unverifiedTeamList'])->name('unverifiedTeamList');
+
     Route::get('/verified-team-participant', [AdminController::class, 'verifiedTeamParticipantList'])->name('verifiedTeamParticipantList');
 
     Route::patch('/verify-team/{id}', [AdminController::class, 'verifyTeam'])->name('verifyTeam');
     Route::patch('/verify-team-participant/{id}', [AdminController::class, 'verifyTeamParticipant'])->name('verifyTeamParticipant');
+
+    Route::get('/admin-participant-view/{id}', [AdminController::class, 'viewParticipant'])->name('viewParticipant');
+
+    Route::get('/admin-participant-edit/{id}', [AdminController::class, 'editParticipant'])->name('editParticipant');
+
+    Route::get('/admin-participant-leader-edit/{id}', [AdminController::class, 'editParticipantLeader'])->name('editParticipantLeader');
+
+    Route::get('/download', [AdminController::class, 'downloadCV'])->name('downloadCV');
 });

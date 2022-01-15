@@ -41,9 +41,9 @@
     <section id="user-dashboard">
       <div class="userdashboard-container">
         <h1>welcome,
-        @foreach ($leaders as $leader )
-        {{ $leader->fullName }}
-        @endforeach
+        {{-- @foreach ($leaders as $leader ) --}}
+        {{ $leaders[0]->fullName }}
+        {{-- @endforeach --}}
     </h1>
         <hr>
         <div id="user-members">
@@ -68,7 +68,7 @@
             {{-- @foreach ($members as $member ) --}}
 
             {{-- @if(empty($membernomor1)) --}}
-            @if(empty($member))
+            @if(empty($membernomor1))
             <div id="user-information">
                 <h4 class="text-center">Member 1 Information</h4>
             <form action="{{route('createMember', ['id'=>$teamId, 'memberNumber'=>1])}}" method="POST" enctype="multipart/form-data">
@@ -124,9 +124,9 @@
                 <button class="btn btn-outline-success rounded-pill" type="submit"><i class="fas fa-user-plus"></i> &nbsp Add member</button>
             </form>
 
-            {{-- @elseif ((!empty($member)) && (empty($membernomor2))) --}}
+            @elseif ((!empty($member)) && (empty($membernomor2)))
             {{-- @elseif (empty($member->memberN) --}}
-            @elseif (empty($member))
+            {{-- @elseif (empty($member)) --}}
 
             <div id="user-information">
                 <h4 class="text-center">Member 2 Information</h4>
@@ -184,12 +184,12 @@
             </form>
 
             {{-- @elseif ((!empty($membernomor1)) && (!empty($membernomor2)) && (empty($membernomor3))) --}}
-            @elseif (empty($member))
+            @elseif (empty($membernomor3))
 
             <form action="{{route('createMember', ['id'=>$teamId, 'memberNumber'=>3])}}" method="POST" enctype="multipart/form-data">
                 @csrf
               <div class="mb-3">
-                <label for="fullName" class="form-label">Full Name33</label>
+                <label for="fullName" class="form-label">Full Name3</label>
                 <input name="fullName" type="text" class="form-control" id="fullName">
               </div>
               <div class="mb-3">
@@ -245,7 +245,7 @@
             <form action="{{route('createMember', ['id'=>$teamId, 'memberNumber'=>3])}}" method="POST" enctype="multipart/form-data">
                 @csrf
               <div class="mb-3">
-                <label for="fullName" class="form-label">Full Name3</label>
+                <label for="fullName" class="form-label">Full Name</label>
                 <input name="fullName" type="text" class="form-control" id="fullName">
               </div>
               <div class="mb-3">
@@ -292,7 +292,7 @@
                     <label for="IDCard" class="form-label">Flazz Card/ID Card</label>
                     <input name="IDCard" type="file" class="form-control" id="IDCard" >
                 </div>
-                <button class="btn btn-outline-success rounded-pill" type="submit"><i class="fas fa-user-plus"></i> &nbsp Add member</button>
+                {{-- <button class="btn btn-outline-success rounded-pill" type="submit"><i class="fas fa-user-plus"></i> &nbsp Add member</button> --}}
                 <p>Hanya boleh ada 3 member!</p>
             </form>
             @endif

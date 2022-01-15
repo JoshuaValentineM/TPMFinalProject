@@ -77,14 +77,14 @@
                 @foreach ($teams as $team )
                 <tr>
                     @if ($team->verification===1)
-                    <th scope="row"><i class="fas fa-check-circle"></i></th>
+                    <th scope="row"><i class="fas fa-check-circle dash-icon"></i></th>
                       @else
-                    <th scope="row"><i class="fas fa- dash-icon"></i></th>
+                    <th scope="row"><i class="fas fa-clock dash-icon"></i></th>
                     @endif
 
                   <td>{{ $team->username}}</td>
-                  <td><button class="admin-edit">Edit</button></td>
-                  <td><button class="admin-view">View</button></td>
+                  <td><button onclick="window.location.href='{{ route('editParticipant', ['id'=>$team->id]) }}'" class="admin-edit">Edit</button></td>
+                  <td><button onclick="window.location.href='{{ route('viewParticipant', ['id'=>$team->id]) }}'" class="admin-view">View</button></td>
                   <td><form action="{{route('verifyTeam', ['id'=>$team->id])}}" method="post">
                     @csrf
                     @method('PATCH')

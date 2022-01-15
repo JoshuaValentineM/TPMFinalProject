@@ -12,7 +12,7 @@ class AdminController extends Controller
     {
         $teamId = $request->user()->id;
         // $teams = DB::table('users')->where('id', $teamId)->get()->toArray();
-        $teams = User::all();
+        $teams = User::all()->except(1);
         return view('admindashboard', ['teams' => $teams]);
     }
 
@@ -35,14 +35,24 @@ class AdminController extends Controller
     public function verifiedTeamList()
     {
         $teams = User::where('verification', 1)->get();
+        // dd($teams);
         return view('admindashboard', compact('teams'));
+        // return view('admindashboard', ['teams' => $teams]);
+    }
+
+    public function unverifiedTeamList()
+    {
+        $teams = User::where('verification', 0)->get()->toArray();
+        // dd($teams);
+        return view('admindashboard', compact('teams'));
+        // return view('admindashboard', ['teams' => $teams]);
     }
 
     public function getAdminParticipant(Request $request)
     {
         $teamId = $request->user()->id;
         // $teams = DB::table('users')->where('id', $teamId)->get()->toArray();
-        $teams = User::all();
+        $teams = User::all()->except(1);
         return view('adminparticipants', ['teams' => $teams]);
     }
 
@@ -52,10 +62,12 @@ class AdminController extends Controller
         return view('adminparticipants', compact('teams'));
     }
 
-    public function downloadCV()
+    public function downloadCV(Request $request, $id)
     {
         $file = public_path('fileStorageCV/1642091972.jpg');
-        // $filename = $request->user()->payment; <<-- Cara lewat tabel users
+        // $teams = User::where('id', $id)->get();
+        // $filename = $request->$teams->payment;
+        // dd($filename);
         // $file = storage_path('app/payment-data/' . $filename);
 
         // $file = storage_path('app/payment-data/temp.jpg');
@@ -64,5 +76,38 @@ class AdminController extends Controller
         // return response()->download(public_path('filestorageCV/' . $CV));
         return response()->download($file);
         // return response()->download($file);
+    }
+
+    public function viewParticipant($id)
+    {
+        // $teams = User::where('id', $id)->get();
+        // $teams = User::all();
+        $teams = $id;
+        $leaders = DB::table('users')->where('id', $teams)->get()->toArray();
+        $members = DB::table('members')->where('teamId', $teams)->get()->toArray();
+        // dd($teams, $members, $leaders);
+        return view('admin-member-view', ['members' => $members,], ['leaders' => $leaders]);
+    }
+
+    public function editParticipant($id)
+    {
+        // $teams = User::where('id', $id)->get();
+        // $teams = User::all();
+        $teams = $id;
+        $leaders = DB::table('users')->where('id', $teams)->get()->toArray();
+        $members = DB::table('members')->where('teamId', $teams)->get()->toArray();
+        // dd($teams, $members, $leaders);
+        return view('admin-member-select', ['members' => $members,], ['leaders' => $leaders]);
+    }
+
+    public function editParticipantLeader($id)
+    {
+        // $teams = User::where('id', $id)->get();
+        // $teams = User::all();
+        $teams = $id;
+        $leaders = DB::table('users')->where('id', $teams)->get()->toArray();
+        $members = DB::table('members')->where('teamId', $teams)->get()->toArray();
+        // dd($teams, $members, $leaders);
+        return view('admin-leader-edit', ['members' => $members,], ['leaders' => $leaders]);
     }
 }

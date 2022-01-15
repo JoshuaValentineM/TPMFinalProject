@@ -44,7 +44,7 @@
                   <div class="toggleswitch">
                     Verified &nbsp
                     <label class="switch">
-                        <a href="{{ route('verifiedTeamParticipantList') }}">
+                        <a href="{{ route('verifiedTeamList') }}">
                       <input type="checkbox">
                       <span class="slider round"></span>
                       {{-- <a href="{{ route('verifiedTeamParticipantList') }}">
@@ -75,14 +75,14 @@
               <tbody>
                 @foreach ($teams as $team )
                 <tr>
-                    @if ($team->verification===1)
-                  <th scope="row"><i class="fas fa-check-circle"></i></th>
-                    @else
-                  <th scope="row"><i class="fas fa- dash-icon"></i></th>
+                    @if ($team->verification==1)
+                  <th scope="row"><i class="fas fa-check-circle dash-icon"></i></th>
+                    @elseif ($team->verification==0)
+                  <th scope="row"><i class="fas fa-clock dash-icon"></i></th>
                   @endif
                   <td>{{ $team->username}}</td>
                   <td>Rp 7.200.000,-</td>
-                  <td><button>View</button></td>
+                  <td><button onclick="window.location.href='{{ route('downloadCV') }}'">View</button></td>
                   <td><form action="{{route('verifyTeam', ['id'=>$team->id])}}" method="post">
                     @csrf
                     @method('PATCH')
